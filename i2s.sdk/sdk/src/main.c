@@ -1,0 +1,117 @@
+#include <stdio.h>
+#include "xil_printf.h"
+#include "xil_io.h"
+#include "xaxidma.h"
+#include "xi2srx.h"
+#include "xparameters.h"
+#include "xil_cache.h"
+
+#define DMA_DEV_ID          XPAR_AXIDMA_0_DEVICE_ID
+#define I2S_DEV_ID          XPAR_I2S_RECEIVER_0_DEVICE_ID
+
+// 1024 sample * 4 byte (32-bit per sample) = 4096 bytes
+#define SAMPLES_COUNT       1024
+#define BUFFER_BYTES        (SAMPLES_COUNT * 4)
+
+XAxiDma AxiDma;
+XI2s_Rx I2sRx;
+u32 RxBuffer[SAMPLES_COUNT] __attribute__ ((aligned(64)));
+
+int main()
+{
+    int status;
+    XAxiDma_Config *DmaCfg;
+    XI2srx_Config *I2sCfg;
+
+    // Jeda singkat sebelum cetak banner
+    for (volatile int d = 0; d < 2000000; d++);
+
+    xil_printf("\r\n========================================\r\n");
+    xil_printf("  INMP441 I2S DMA Test (Ebaz4205)\r\n");
+    xil_printf("========================================\r\n");
+
+    // 1. Inisialisasi I2S Receiver IP
+    xil_printf("[1/3] Initializing I2S Receiver core...\r\n");
+    I2sCfg = XI2s_Rx_LookupConfig(I2S_DEV_ID);
+    if (!I2sCfg) {
+        xil_printf("ERROR: I2S Config not found!\r\n");
+        return XST_FAILURE;
+    }
+
+    status = XI2s_Rx_CfgInitialize(&I2sRx, I2sCfg, I2sCfg->BaseAddress);
+    if (status != XST_SUCCESS) {
+        xil_printf("ERROR: I2S Init Failed (%d)!\r\n", status);
+        return XST_FAILURE;
+    }
+
+    // Set clock divider: aud_mclk = 12.288MHz, Fs = 48kHz
+    status = XI2s_Rx_SetSclkOutDiv(&I2sRx, 12288000, 48000);
+    if (status != XST_SUCCESS) {
+        xil_printf("WARN: SCLK Div calculation returned %d\r\n", status);
+    }
+
+    // Hubungkan Channel 0/1 ke pin I2S fisik
+    XI2s_Rx_SetChMux(&I2sRx, XI2S_RX_CHID0, XI2S_RX_CHMUX_XI2S_01);
+
+    // Aktifkan core I2S Receiver (menghasilkan SCK & WS)
+    XI2s_Rx_Enable(&I2sRx, TRUE);
+    xil_printf("SUCCESS: I2S Receiver active (SCK/WS running)!\r\n");
+
+    // 2. Inisialisasi AXI DMA
+    xil_printf("[2/3] Initializing AXI DMA...\r\n");
+    DmaCfg = XAxiDma_LookupConfig(DMA_DEV_ID);
+    if (!DmaCfg) {
+        xil_printf("ERROR: DMA Config not found!\r\n");
+        return XST_FAILURE;
+    }
+
+    status = XAxiDma_CfgInitialize(&AxiDma, DmaCfg);
+    if (status != XST_SUCCESS) {
+        xil_printf("ERROR: DMA Init Failed (%d)!\r\n", status);
+        return XST_FAILURE;
+    }
+
+    if (XAxiDma_HasSg(&AxiDma)) {
+        xil_printf("ERROR: DMA dikonfigurasi sebagai SG mode!\r\n");
+        return XST_FAILURE;
+    }
+    xil_printf("SUCCESS: AXI DMA initialized in Simple Transfer mode!\r\n");
+
+    // 3. Loop Akuisisi Audio
+    xil_printf("[3/3] Starting audio capture loop...\r\n");
+    int packet_count = 0;
+    while (1) {
+        Xil_DCacheInvalidateRange((UINTPTR)RxBuffer, BUFFER_BYTES);
+
+        // Trigger DMA S2MM
+        status = XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)RxBuffer, BUFFER_BYTES, XAXIDMA_DEVICE_TO_DMA);
+        if (status != XST_SUCCESS) {
+            xil_printf("DMA Transfer Error: %d\r\n", status);
+            break;
+        }
+
+        // Tunggu DMA selesai dengan timeout (~1.5 detik)
+        int timeout = 15000000;
+        while (XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA) && --timeout > 0);
+
+        if (timeout <= 0) {
+            xil_printf("[WARN] DMA timeout (no 1024 samples yet). Checking mic SD pin/clocks...\r\n");
+            XAxiDma_Reset(&AxiDma);
+            while (!XAxiDma_ResetIsDone(&AxiDma));
+            for (volatile int d = 0; d < 10000000; d++);
+            continue;
+        }
+
+        packet_count++;
+        xil_printf("\r\n--- Packet #%d (1024 samples received) ---\r\n", packet_count);
+        for (int i = 0; i < 8; i++) {
+            // Sign extend 24-bit ke int 32-bit
+            int32_t sample = (int32_t)(RxBuffer[i] << 8) >> 8;
+            xil_printf("Sample[%d]: %d (raw: 0x%08X)\r\n", i, sample, RxBuffer[i]);
+        }
+
+        for (volatile int d = 0; d < 3000000; d++);
+    }
+
+    return 0;
+}

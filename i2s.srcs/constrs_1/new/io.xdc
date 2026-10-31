@@ -1,0 +1,8 @@
+set_property PACKAGE_PIN M19 [get_ports lrclk_out_0]
+set_property PACKAGE_PIN P18 [get_ports sclk_out_0]
+set_property PACKAGE_PIN L17 [get_ports sdata_0_in_0]
+set_property PACKAGE_PIN M17 [get_ports sdata_0_out_0]
+set_property IOSTANDARD LVCMOS33 [get_ports lrclk_out_0]
+set_property IOSTANDARD LVCMOS33 [get_ports sclk_out_0]
+set_property IOSTANDARD LVCMOS33 [get_ports sdata_0_in_0]
+set_property IOSTANDARD LVCMOS33 [get_ports sdata_0_out_0]
