@@ -24,7 +24,12 @@ src/main.o src/main.o: ../src/main.c \
  ../../sdk_bsp/ps7_cortexa9_0/include/xi2srx.h \
  ../../sdk_bsp/ps7_cortexa9_0/include/xi2srx_chsts.h \
  ../../sdk_bsp/ps7_cortexa9_0/include/xparameters.h \
- ../../sdk_bsp/ps7_cortexa9_0/include/xil_cache.h
+ ../../sdk_bsp/ps7_cortexa9_0/include/xil_cache.h \
+ ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx.h \
+ ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx_hw.h \
+ ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx_debug.h \
+ ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx_chsts.h \
+ ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx.h
 
 ../../sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:
 
@@ -77,3 +82,13 @@ src/main.o src/main.o: ../src/main.c \
 ../../sdk_bsp/ps7_cortexa9_0/include/xparameters.h:
 
 ../../sdk_bsp/ps7_cortexa9_0/include/xil_cache.h:
+
+../../sdk_bsp/ps7_cortexa9_0/include/xi2stx.h:
+
+../../sdk_bsp/ps7_cortexa9_0/include/xi2stx_hw.h:
+
+../../sdk_bsp/ps7_cortexa9_0/include/xi2stx_debug.h:
+
+../../sdk_bsp/ps7_cortexa9_0/include/xi2stx_chsts.h:
+
+../../sdk_bsp/ps7_cortexa9_0/include/xi2stx.h:

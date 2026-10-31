@@ -5,9 +5,13 @@
 #include "xi2srx.h"
 #include "xparameters.h"
 #include "xil_cache.h"
+#include "xi2stx.h"
+
 
 #define DMA_DEV_ID          XPAR_AXIDMA_0_DEVICE_ID
 #define I2S_DEV_ID          XPAR_I2S_RECEIVER_0_DEVICE_ID
+#define I2S_TX_DEV_ID       XPAR_I2S_TRANSMITTER_0_DEVICE_ID
+
 
 // 1024 sample * 4 byte (32-bit per sample) = 4096 bytes
 #define SAMPLES_COUNT       1024
@@ -17,11 +21,15 @@ XAxiDma AxiDma;
 XI2s_Rx I2sRx;
 u32 RxBuffer[SAMPLES_COUNT] __attribute__ ((aligned(64)));
 
+XI2s_Tx I2sTx;
+
+
 int main()
 {
     int status;
     XAxiDma_Config *DmaCfg;
     XI2srx_Config *I2sCfg;
+    XI2stx_Config *I2sTxCfg;
 
     // Jeda singkat sebelum cetak banner
     for (volatile int d = 0; d < 2000000; d++);
@@ -56,6 +64,34 @@ int main()
     // Aktifkan core I2S Receiver (menghasilkan SCK & WS)
     XI2s_Rx_Enable(&I2sRx, TRUE);
     xil_printf("SUCCESS: I2S Receiver active (SCK/WS running)!\r\n");
+
+    // Inisialisasi I2S Transmitter IP
+    xil_printf("[2/3] Initializing I2S Transmitter core...\r\n");
+    I2sTxCfg = XI2s_Tx_LookupConfig(I2S_TX_DEV_ID);
+    if (!I2sTxCfg) {
+        xil_printf("ERROR: I2S Tx Config not found!\r\n");
+        return XST_FAILURE;
+    }
+
+    status = XI2s_Tx_CfgInitialize(&I2sTx, I2sTxCfg, I2sTxCfg->BaseAddress);
+    if (status != XST_SUCCESS) {
+        xil_printf("ERROR: I2S Tx Init Failed (%d)!\r\n", status);
+        return XST_FAILURE;
+    }
+
+    // Set clock divider: 12.288MHz, Fs = 48kHz
+    status = XI2s_Tx_SetSclkOutDiv(&I2sTx, 12288000, 48000);
+    if (status != XST_SUCCESS) {
+        xil_printf("WARN: Tx SCLK Div calculation returned %d\r\n", status);
+    }
+
+    // Buka keran data audio dari AXI-Stream ke Transmitter
+    XI2s_Tx_SetChMux(&I2sTx, XI2S_TX_CHID0, XI2S_TX_CHMUX_AXIS_01);
+
+    // Aktifkan core Transmitter
+    XI2s_Tx_Enable(&I2sTx, TRUE);
+    xil_printf("SUCCESS: I2S Transmitter active (M17 is live)!\r\n");
+
 
     // 2. Inisialisasi AXI DMA
     xil_printf("[2/3] Initializing AXI DMA...\r\n");
