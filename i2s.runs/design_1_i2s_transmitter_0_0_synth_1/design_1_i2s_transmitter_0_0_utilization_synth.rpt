@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Sat Oct 31 15:46:21 2026
+| Date         : Sun Nov  1 18:33:42 2026
 | Host         : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 | Command      : report_utilization -file design_1_i2s_transmitter_0_0_utilization_synth.rpt -pb design_1_i2s_transmitter_0_0_utilization_synth.pb
 | Design       : design_1_i2s_transmitter_0_0
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  640 |     0 |     17600 |  3.64 |
-|   LUT as Logic          |  640 |     0 |     17600 |  3.64 |
+| Slice LUTs*             |  608 |     0 |     17600 |  3.45 |
+|   LUT as Logic          |  608 |     0 |     17600 |  3.45 |
 |   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
-| Slice Registers         | 1752 |     0 |     35200 |  4.98 |
-|   Register as Flip Flop | 1752 |     0 |     35200 |  4.98 |
+| Slice Registers         | 1725 |     0 |     35200 |  4.90 |
+|   Register as Flip Flop | 1725 |     0 |     35200 |  4.90 |
 |   Register as Latch     |    0 |     0 |     35200 |  0.00 |
 | F7 Muxes                |    0 |     0 |      8800 |  0.00 |
 | F8 Muxes                |    0 |     0 |      4400 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 2     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 19    |          Yes |         Set |            - |
-| 1731  |          Yes |       Reset |            - |
+| 1704  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,15 +147,15 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 1731 |        Flop & Latch |
-| LUT6     |  330 |                 LUT |
-| LUT2     |  138 |                 LUT |
-| LUT3     |  113 |                 LUT |
-| LUT5     |   79 |                 LUT |
-| LUT4     |   69 |                 LUT |
-| CARRY4   |   40 |          CarryLogic |
+| FDRE     | 1704 |        Flop & Latch |
+| LUT6     |  294 |                 LUT |
+| LUT2     |  127 |                 LUT |
+| LUT3     |   89 |                 LUT |
+| LUT5     |   88 |                 LUT |
+| LUT4     |   84 |                 LUT |
+| CARRY4   |   30 |          CarryLogic |
 | FDSE     |   19 |        Flop & Latch |
-| LUT1     |   11 |                 LUT |
+| LUT1     |    9 |                 LUT |
 | FDPE     |    2 |        Flop & Latch |
 | RAMB18E1 |    1 |        Block Memory |
 +----------+------+---------------------+

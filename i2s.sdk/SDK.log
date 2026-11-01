@@ -750,3 +750,809 @@ con
 ----------------End of Script----------------
 
 16:42:42 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+12:34:03 INFO  : Registering command handlers for SDK TCF services
+12:34:03 INFO  : Launching XSCT server: xsct -n -interactive /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/temp_xsdb_launch_script.tcl
+12:34:06 INFO  : XSCT server has started successfully.
+12:34:06 INFO  : Successfully done setting XSCT server connection channel  
+12:34:06 INFO  : Successfully done setting SDK workspace  
+12:34:11 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1793510848000,  Project:1793439670000
+12:34:11 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+12:34:14 INFO  : Copied contents of /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+12:34:15 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+12:34:16 INFO  : 
+12:34:17 INFO  : Updating hardware inferred compiler options for sdk.
+12:34:17 INFO  : Clearing existing target manager status.
+12:34:55 INFO  : Launching XSCT server: xsct -n -interactive /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/temp_xsdb_launch_script.tcl
+12:34:55 INFO  : Registering command handlers for SDK TCF services
+12:34:57 INFO  : XSCT server has started successfully.
+12:34:57 INFO  : Successfully done setting XSCT server connection channel  
+12:34:57 INFO  : Successfully done setting SDK workspace  
+12:35:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+12:35:19 INFO  : 'fpga -state' command is executed.
+12:35:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:35:19 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+12:35:19 INFO  : 'jtag frequency' command is executed.
+12:35:19 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:35:19 INFO  : Context for 'APU' is selected.
+12:35:19 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+12:35:19 INFO  : 'configparams force-mem-access 1' command is executed.
+12:35:19 INFO  : Context for 'APU' is selected.
+12:35:19 INFO  : 'stop' command is executed.
+12:35:20 INFO  : 'ps7_init' command is executed.
+12:35:20 INFO  : 'ps7_post_config' command is executed.
+12:35:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:35:20 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:35:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:35:22 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:35:22 INFO  : 'configparams force-mem-access 0' command is executed.
+12:35:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:35:22 INFO  : Memory regions updated for context APU
+12:35:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:35:22 INFO  : 'con' command is executed.
+12:35:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+12:35:22 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+13:00:20 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1793512738000,  Project:1793510848000
+13:00:20 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+13:00:26 INFO  : Copied contents of /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+13:00:27 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:00:28 INFO  : 
+13:00:29 INFO  : Updating hardware inferred compiler options for sdk.
+13:00:29 INFO  : Clearing existing target manager status.
+13:00:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:00:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+13:01:26 INFO  : FPGA configured successfully with bitstream "/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+13:01:46 INFO  : Disconnected from the channel tcfchan#1.
+13:01:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+13:01:47 INFO  : 'fpga -state' command is executed.
+13:01:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:01:48 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+13:01:48 INFO  : 'jtag frequency' command is executed.
+13:01:48 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:01:48 INFO  : Context for 'APU' is selected.
+13:01:48 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+13:01:48 INFO  : 'configparams force-mem-access 1' command is executed.
+13:01:48 INFO  : Context for 'APU' is selected.
+13:01:48 INFO  : 'stop' command is executed.
+13:01:50 INFO  : 'ps7_init' command is executed.
+13:01:50 INFO  : 'ps7_post_config' command is executed.
+13:01:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:01:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:01:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:01:53 ERROR : Memory write error at 0x100000. AP transaction timeout
+13:01:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+----------------End of Script----------------
+
+13:02:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:03:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+13:03:48 INFO  : 'fpga -state' command is executed.
+13:03:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:03:49 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+13:03:49 INFO  : 'jtag frequency' command is executed.
+13:03:49 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:03:49 INFO  : Context for 'APU' is selected.
+13:03:49 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+13:03:49 INFO  : 'configparams force-mem-access 1' command is executed.
+13:03:49 INFO  : Context for 'APU' is selected.
+13:03:49 INFO  : 'stop' command is executed.
+13:03:50 INFO  : 'ps7_init' command is executed.
+13:03:50 INFO  : 'ps7_post_config' command is executed.
+13:03:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:03:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:03:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:03:52 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:03:52 INFO  : 'configparams force-mem-access 0' command is executed.
+13:03:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:03:52 INFO  : Memory regions updated for context APU
+13:03:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:03:52 INFO  : 'con' command is executed.
+13:03:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+13:03:52 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+13:20:16 INFO  : Disconnected from the channel tcfchan#2.
+13:20:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+13:20:17 INFO  : 'fpga -state' command is executed.
+13:20:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:20:17 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+13:20:17 INFO  : 'jtag frequency' command is executed.
+13:20:17 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:20:17 INFO  : Context for 'APU' is selected.
+13:20:18 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+13:20:18 INFO  : 'configparams force-mem-access 1' command is executed.
+13:20:18 INFO  : Context for 'APU' is selected.
+13:20:18 INFO  : 'stop' command is executed.
+13:20:18 INFO  : 'ps7_init' command is executed.
+13:20:18 INFO  : 'ps7_post_config' command is executed.
+13:20:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:20:18 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:20:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:20:20 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:20:20 INFO  : 'configparams force-mem-access 0' command is executed.
+13:20:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:20:20 INFO  : Memory regions updated for context APU
+13:20:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:20:21 INFO  : 'con' command is executed.
+13:20:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+13:20:21 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+16:20:58 INFO  : Disconnected from the channel tcfchan#3.
+16:21:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+16:21:00 INFO  : 'fpga -state' command is executed.
+16:21:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:21:00 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+16:21:00 INFO  : 'jtag frequency' command is executed.
+16:21:00 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:21:00 INFO  : Context for 'APU' is selected.
+16:21:00 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+16:21:00 INFO  : 'configparams force-mem-access 1' command is executed.
+16:21:00 INFO  : Context for 'APU' is selected.
+16:21:00 INFO  : 'stop' command is executed.
+16:21:01 INFO  : 'ps7_init' command is executed.
+16:21:01 INFO  : 'ps7_post_config' command is executed.
+16:21:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:21:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:21:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:21:03 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:21:03 INFO  : 'configparams force-mem-access 0' command is executed.
+16:21:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:21:03 INFO  : Memory regions updated for context APU
+16:21:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:21:03 INFO  : 'con' command is executed.
+16:21:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+16:21:03 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+16:28:37 INFO  : Disconnected from the channel tcfchan#4.
+16:28:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+16:28:38 INFO  : 'fpga -state' command is executed.
+16:28:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:28:38 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+16:28:38 INFO  : 'jtag frequency' command is executed.
+16:28:38 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:28:38 INFO  : Context for 'APU' is selected.
+16:28:38 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+16:28:38 INFO  : 'configparams force-mem-access 1' command is executed.
+16:28:38 INFO  : Context for 'APU' is selected.
+16:28:38 INFO  : 'stop' command is executed.
+16:28:41 INFO  : 'ps7_init' command is executed.
+16:28:41 INFO  : 'ps7_post_config' command is executed.
+16:28:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:28:41 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:28:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:28:43 ERROR : Memory write error at 0x100000. AP transaction timeout
+16:28:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+----------------End of Script----------------
+
+16:34:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+16:34:14 INFO  : 'fpga -state' command is executed.
+16:34:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:34:15 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+16:34:15 INFO  : 'jtag frequency' command is executed.
+16:34:15 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:34:15 INFO  : Context for 'APU' is selected.
+16:34:15 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+16:34:15 INFO  : 'configparams force-mem-access 1' command is executed.
+16:34:15 INFO  : Context for 'APU' is selected.
+16:34:15 INFO  : 'stop' command is executed.
+16:34:15 INFO  : 'ps7_init' command is executed.
+16:34:15 INFO  : 'ps7_post_config' command is executed.
+16:34:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:34:16 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:34:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:34:18 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:34:18 INFO  : 'configparams force-mem-access 0' command is executed.
+16:34:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:34:18 INFO  : Memory regions updated for context APU
+16:34:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:34:18 INFO  : 'con' command is executed.
+16:34:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+16:34:18 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+16:40:54 INFO  : Disconnected from the channel tcfchan#5.
+16:40:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+16:40:55 INFO  : 'fpga -state' command is executed.
+16:40:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:40:55 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+16:40:55 INFO  : 'jtag frequency' command is executed.
+16:40:55 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:40:55 INFO  : Context for 'APU' is selected.
+16:40:55 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+16:40:55 INFO  : 'configparams force-mem-access 1' command is executed.
+16:40:55 INFO  : Context for 'APU' is selected.
+16:40:55 INFO  : 'stop' command is executed.
+16:40:56 INFO  : 'ps7_init' command is executed.
+16:40:56 INFO  : 'ps7_post_config' command is executed.
+16:40:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:40:56 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:40:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:40:58 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:40:58 INFO  : 'configparams force-mem-access 0' command is executed.
+16:40:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:40:58 INFO  : Memory regions updated for context APU
+16:40:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:40:58 INFO  : 'con' command is executed.
+16:40:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+16:40:58 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+17:04:38 INFO  : Disconnected from the channel tcfchan#6.
+17:04:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+17:04:39 INFO  : 'fpga -state' command is executed.
+17:04:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:04:39 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+17:04:39 INFO  : 'jtag frequency' command is executed.
+17:04:39 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:04:39 INFO  : Context for 'APU' is selected.
+17:04:39 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:04:39 INFO  : 'configparams force-mem-access 1' command is executed.
+17:04:39 INFO  : Context for 'APU' is selected.
+17:04:39 INFO  : 'stop' command is executed.
+17:04:40 INFO  : 'ps7_init' command is executed.
+17:04:40 INFO  : 'ps7_post_config' command is executed.
+17:04:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:04:40 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:04:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:04:42 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:04:42 INFO  : 'configparams force-mem-access 0' command is executed.
+17:04:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:04:42 INFO  : Memory regions updated for context APU
+17:04:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:04:42 INFO  : 'con' command is executed.
+17:04:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+17:04:42 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+17:09:43 INFO  : Disconnected from the channel tcfchan#7.
+17:09:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+17:09:44 INFO  : 'fpga -state' command is executed.
+17:09:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:09:44 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+17:09:44 INFO  : 'jtag frequency' command is executed.
+17:09:44 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:09:44 INFO  : Context for 'APU' is selected.
+17:09:44 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:09:44 INFO  : 'configparams force-mem-access 1' command is executed.
+17:09:44 INFO  : Context for 'APU' is selected.
+17:09:44 INFO  : 'stop' command is executed.
+17:09:45 INFO  : 'ps7_init' command is executed.
+17:09:45 INFO  : 'ps7_post_config' command is executed.
+17:09:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:09:45 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:09:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:09:47 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:09:47 INFO  : 'configparams force-mem-access 0' command is executed.
+17:09:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:09:47 INFO  : Memory regions updated for context APU
+17:09:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:09:47 INFO  : 'con' command is executed.
+17:09:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+17:09:47 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+17:14:48 INFO  : Disconnected from the channel tcfchan#8.
+17:14:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+17:14:49 INFO  : 'fpga -state' command is executed.
+17:14:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:14:49 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+17:14:49 INFO  : 'jtag frequency' command is executed.
+17:14:49 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:14:49 INFO  : Context for 'APU' is selected.
+17:14:49 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:14:49 INFO  : 'configparams force-mem-access 1' command is executed.
+17:14:49 INFO  : Context for 'APU' is selected.
+17:14:49 INFO  : 'stop' command is executed.
+17:14:50 INFO  : 'ps7_init' command is executed.
+17:14:50 INFO  : 'ps7_post_config' command is executed.
+17:14:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:14:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:14:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:14:52 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:14:52 INFO  : 'configparams force-mem-access 0' command is executed.
+17:14:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:14:52 INFO  : Memory regions updated for context APU
+17:14:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:14:52 INFO  : 'con' command is executed.
+17:14:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+17:14:52 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+17:15:22 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1793527714000,  Project:1793512738000
+17:15:22 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+17:15:25 INFO  : Copied contents of /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+17:15:27 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+17:15:28 INFO  : 
+17:15:29 INFO  : Updating hardware inferred compiler options for sdk.
+17:15:29 INFO  : Clearing existing target manager status.
+17:15:47 INFO  : Disconnected from the channel tcfchan#9.
+17:15:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:15:48 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+17:15:48 INFO  : 'jtag frequency' command is executed.
+17:15:48 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:15:48 INFO  : Context for 'APU' is selected.
+17:15:49 INFO  : System reset is completed.
+17:15:52 INFO  : 'after 3000' command is executed.
+17:15:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+17:16:34 INFO  : FPGA configured successfully with bitstream "/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+17:16:34 INFO  : Context for 'APU' is selected.
+17:16:34 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:16:34 INFO  : 'configparams force-mem-access 1' command is executed.
+17:16:34 INFO  : Context for 'APU' is selected.
+17:16:34 INFO  : 'ps7_init' command is executed.
+17:16:34 INFO  : 'ps7_post_config' command is executed.
+17:16:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:16:36 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:16:36 INFO  : 'configparams force-mem-access 0' command is executed.
+17:16:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1
+fpga -file /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:16:36 INFO  : Memory regions updated for context APU
+17:16:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:16:37 INFO  : 'con' command is executed.
+17:16:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+17:16:37 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+17:24:58 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1793528441000,  Project:1793527714000
+17:24:58 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+17:25:01 INFO  : Copied contents of /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+17:25:02 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+17:25:03 INFO  : 
+17:25:04 INFO  : Updating hardware inferred compiler options for sdk.
+17:25:04 INFO  : Clearing existing target manager status.
+17:25:16 INFO  : Disconnected from the channel tcfchan#10.
+17:25:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:25:17 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+17:25:17 INFO  : 'jtag frequency' command is executed.
+17:25:17 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:25:17 INFO  : Context for 'APU' is selected.
+17:25:17 INFO  : System reset is completed.
+17:25:20 INFO  : 'after 3000' command is executed.
+17:25:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+17:26:02 INFO  : FPGA configured successfully with bitstream "/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+17:26:03 INFO  : Context for 'APU' is selected.
+17:26:03 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:26:03 INFO  : 'configparams force-mem-access 1' command is executed.
+17:26:03 INFO  : Context for 'APU' is selected.
+17:26:03 INFO  : 'ps7_init' command is executed.
+17:26:03 INFO  : 'ps7_post_config' command is executed.
+17:26:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:26:05 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:26:05 INFO  : 'configparams force-mem-access 0' command is executed.
+17:26:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1
+fpga -file /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:26:05 INFO  : Memory regions updated for context APU
+17:26:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:26:05 INFO  : 'con' command is executed.
+17:26:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+17:26:05 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+17:28:21 INFO  : Disconnected from the channel tcfchan#11.
+17:28:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:28:22 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+17:28:22 INFO  : 'jtag frequency' command is executed.
+17:28:22 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:28:22 INFO  : Context for 'APU' is selected.
+17:28:22 INFO  : System reset is completed.
+17:28:25 INFO  : 'after 3000' command is executed.
+17:28:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+17:29:07 INFO  : FPGA configured successfully with bitstream "/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+17:29:07 INFO  : Context for 'APU' is selected.
+17:29:07 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:29:07 INFO  : 'configparams force-mem-access 1' command is executed.
+17:29:07 INFO  : Context for 'APU' is selected.
+17:29:08 INFO  : 'ps7_init' command is executed.
+17:29:08 INFO  : 'ps7_post_config' command is executed.
+17:29:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:29:10 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:29:10 INFO  : 'configparams force-mem-access 0' command is executed.
+17:29:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1
+fpga -file /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:29:10 INFO  : Memory regions updated for context APU
+17:29:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:29:10 INFO  : 'con' command is executed.
+17:29:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+17:29:10 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+17:39:49 INFO  : Disconnected from the channel tcfchan#12.
+17:39:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:39:50 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+17:39:50 INFO  : 'jtag frequency' command is executed.
+17:39:50 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:39:50 INFO  : Context for 'APU' is selected.
+17:39:50 INFO  : System reset is completed.
+17:39:53 INFO  : 'after 3000' command is executed.
+17:39:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+17:40:36 INFO  : FPGA configured successfully with bitstream "/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+17:40:36 INFO  : Context for 'APU' is selected.
+17:40:36 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:40:36 INFO  : 'configparams force-mem-access 1' command is executed.
+17:40:36 INFO  : Context for 'APU' is selected.
+17:40:36 INFO  : 'ps7_init' command is executed.
+17:40:36 INFO  : 'ps7_post_config' command is executed.
+17:40:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:40:38 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:40:38 INFO  : 'configparams force-mem-access 0' command is executed.
+17:40:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1
+fpga -file /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:40:38 INFO  : Memory regions updated for context APU
+17:40:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:40:38 INFO  : 'con' command is executed.
+17:40:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+17:40:38 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+17:56:53 INFO  : Disconnected from the channel tcfchan#13.
+17:56:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:56:54 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+17:56:54 INFO  : 'jtag frequency' command is executed.
+17:56:54 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:56:54 INFO  : Context for 'APU' is selected.
+17:56:54 INFO  : System reset is completed.
+17:56:57 INFO  : 'after 3000' command is executed.
+17:56:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+17:57:39 INFO  : FPGA configured successfully with bitstream "/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+17:57:39 INFO  : Context for 'APU' is selected.
+17:57:39 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:57:39 INFO  : 'configparams force-mem-access 1' command is executed.
+17:57:39 INFO  : Context for 'APU' is selected.
+17:57:40 INFO  : 'ps7_init' command is executed.
+17:57:40 INFO  : 'ps7_post_config' command is executed.
+17:57:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:57:42 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:57:42 INFO  : 'configparams force-mem-access 0' command is executed.
+17:57:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1
+fpga -file /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:57:42 INFO  : Memory regions updated for context APU
+17:57:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:57:42 INFO  : 'con' command is executed.
+17:57:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+17:57:42 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'
+18:40:55 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1793532976000,  Project:1793528441000
+18:40:55 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+18:41:00 INFO  : Copied contents of /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+18:41:02 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+18:41:03 INFO  : 
+18:41:04 INFO  : Updating hardware inferred compiler options for sdk.
+18:41:04 INFO  : Clearing existing target manager status.
+18:44:49 INFO  : Disconnected from the channel tcfchan#14.
+18:44:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:44:50 INFO  : Jtag cable 'Digilent JTAG-SMT2 D3061766ABCD' is selected.
+18:44:50 INFO  : 'jtag frequency' command is executed.
+18:44:50 INFO  : Sourcing of '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:44:50 INFO  : Context for 'APU' is selected.
+18:44:50 INFO  : System reset is completed.
+18:44:53 INFO  : 'after 3000' command is executed.
+18:44:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1' command is executed.
+18:45:35 INFO  : FPGA configured successfully with bitstream "/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:45:35 INFO  : Context for 'APU' is selected.
+18:45:35 INFO  : Hardware design information is loaded from '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:45:35 INFO  : 'configparams force-mem-access 1' command is executed.
+18:45:35 INFO  : Context for 'APU' is selected.
+18:45:36 INFO  : 'ps7_init' command is executed.
+18:45:36 INFO  : 'ps7_post_config' command is executed.
+18:45:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:45:38 INFO  : The application '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:45:38 INFO  : 'configparams force-mem-access 0' command is executed.
+18:45:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD" && level==0} -index 1
+fpga -file /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+loadhw -hw /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+dow /home/maruf/fpga_ebaz4205/i2s/i2s.sdk/sdk/Debug/sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:45:38 INFO  : Memory regions updated for context APU
+18:45:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:45:38 INFO  : 'con' command is executed.
+18:45:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 D3061766ABCD"} -index 0
+con
+----------------End of Script----------------
+
+18:45:38 INFO  : Launch script is exported to file '/home/maruf/fpga_ebaz4205/i2s/i2s.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_sdk.elf_on_local.tcl'

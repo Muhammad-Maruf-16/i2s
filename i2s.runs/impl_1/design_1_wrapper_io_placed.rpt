@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date                      : Sat Oct 31 16:25:39 2026
+| Date                      : Sun Nov  1 18:35:20 2026
 | Host                      : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|           134 |
+|           135 |
 +---------------+
 
 
@@ -254,7 +254,7 @@ Table of Contents
 | L17        | sdata_0_in_0      | High Range | IO_L11N_T1_SRCC_35      | INPUT         | LVCMOS33          |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | L18        |                   |            | GND                     | GND           |                   |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | L19        |                   | High Range | IO_L9P_T1_DQS_AD3P_35   | User IO       |                   |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| L20        |                   | High Range | IO_L9N_T1_DQS_AD3N_35   | User IO       |                   |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| L20        | sdata_1_in_0      | High Range | IO_L9N_T1_DQS_AD3N_35   | INPUT         | LVCMOS33          |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | M1         |                   |            | GND                     | GND           |                   |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | M2         | DDR_ck_n          |            | PS_DDR_CKN_502          | IN            | DIFF_SSTL15       |         |            | FAST |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | M3         | DDR_addr[2]       |            | PS_DDR_A2_502           | OUT           | SSTL15            |         |            | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |

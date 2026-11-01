@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-//Date        : Sat Oct 31 15:45:10 2026
+//Date        : Sun Nov  1 18:32:57 2026
 //Host        : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -35,7 +35,8 @@ module design_1
     lrclk_out_0,
     sclk_out_0,
     sdata_0_in_0,
-    sdata_0_out_0);
+    sdata_0_out_0,
+    sdata_1_in_0);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_cas_n;
@@ -61,6 +62,7 @@ module design_1
   output sclk_out_0;
   input sdata_0_in_0;
   output sdata_0_out_0;
+  input sdata_1_in_0;
 
   wire [31:0]axi_dma_0_M_AXI_S2MM_AWADDR;
   wire [1:0]axi_dma_0_M_AXI_S2MM_AWBURST;
@@ -350,6 +352,7 @@ module design_1
   design_1_i2s_transmitter_0_0 i2s_transmitter_0
        (.aud_mclk(clk_wiz_0_clk_out1),
         .aud_mrst(xlconstant_0_dout),
+        .lrclk_in(i2s_receiver_0_lrclk_out),
         .s_axi_ctrl_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_ctrl_araddr(ps7_0_axi_periph_M02_AXI_ARADDR[7:0]),
         .s_axi_ctrl_aresetn(rst_ps7_0_50M_peripheral_aresetn),
@@ -374,6 +377,7 @@ module design_1
         .s_axis_aud_tid(i2s_receiver_0_m_axis_aud_TID),
         .s_axis_aud_tready(i2s_receiver_0_m_axis_aud_TREADY),
         .s_axis_aud_tvalid(i2s_receiver_0_m_axis_aud_TVALID),
+        .sclk_in(i2s_receiver_0_sclk_out),
         .sdata_0_out(i2s_transmitter_0_sdata_0_out));
   design_1_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),

@@ -1,0 +1,5 @@
+12:33:37 INFO  : Registering command handlers for SDK TCF services
+12:33:38 INFO  : Launching XSCT server: xsct -n -interactive /home/maruf/fpga_ebaz4205/i2s/temp_xsdb_launch_script.tcl
+12:33:40 INFO  : XSCT server has started successfully.
+12:33:40 INFO  : Successfully done setting XSCT server connection channel  
+12:33:41 INFO  : Successfully done setting SDK workspace  

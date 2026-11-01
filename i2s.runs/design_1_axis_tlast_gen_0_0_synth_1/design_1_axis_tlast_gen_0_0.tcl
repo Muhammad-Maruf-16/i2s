@@ -18,6 +18,8 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
+set_param chipscope.maxJobs 3
+set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 create_project -in_memory -part xc7z010clg400-1
 

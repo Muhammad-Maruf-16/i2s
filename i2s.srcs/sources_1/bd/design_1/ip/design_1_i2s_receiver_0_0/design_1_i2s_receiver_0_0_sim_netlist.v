@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Thu Oct 29 09:56:53 2026
+// Date        : Sun Nov  1 16:24:14 2026
 // Host        : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 // Command     : write_verilog -force -mode funcsim -rename_top design_1_i2s_receiver_0_0 -prefix
 //               design_1_i2s_receiver_0_0_ design_1_i2s_receiver_0_0_sim_netlist.v
@@ -45,11 +45,11 @@ module design_1_i2s_receiver_0_0
     m_axis_aud_tid,
     m_axis_aud_tvalid,
     m_axis_aud_tready);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s_axi_ctrl_aclk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_ctrl_aclk, ASSOCIATED_BUSIF s_axi_ctrl, ASSOCIATED_RESET s_axi_ctrl_aresetn, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s_axi_ctrl_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s_axi_ctrl_aclk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_ctrl_aclk, ASSOCIATED_BUSIF s_axi_ctrl, ASSOCIATED_RESET s_axi_ctrl_aresetn, FREQ_HZ 5e+07, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s_axi_ctrl_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 s_axi_ctrl_aresetn RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_ctrl_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_ctrl_aresetn;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aud_mclk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aud_mclk, ASSOCIATED_RESET aud_mrst, FREQ_HZ 12286002, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input aud_mclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 aud_mrst RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aud_mrst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input aud_mrst;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_axis_aud_aclk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_aud_aclk, ASSOCIATED_BUSIF m_axis_aud, ASSOCIATED_RESET m_axis_aud_aresetn, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input m_axis_aud_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_axis_aud_aclk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_aud_aclk, ASSOCIATED_BUSIF m_axis_aud, ASSOCIATED_RESET m_axis_aud_aresetn, FREQ_HZ 5e+07, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input m_axis_aud_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 m_axis_aud_aresetn RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_aud_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input m_axis_aud_aresetn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl AWVALID" *) input s_axi_ctrl_awvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl AWREADY" *) output s_axi_ctrl_awready;
@@ -66,7 +66,7 @@ module design_1_i2s_receiver_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl RVALID" *) output s_axi_ctrl_rvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl RREADY" *) input s_axi_ctrl_rready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl RDATA" *) output [31:0]s_axi_ctrl_rdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl RRESP" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_ctrl, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 8, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) output [1:0]s_axi_ctrl_rresp;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl RRESP" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_ctrl, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 5e+07, ID_WIDTH 0, ADDR_WIDTH 8, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) output [1:0]s_axi_ctrl_rresp;
   (* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 irq INTERRUPT" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME irq, SENSITIVITY LEVEL_HIGH, PortWidth 1" *) output irq;
   output lrclk_out;
   output sclk_out;
@@ -74,7 +74,7 @@ module design_1_i2s_receiver_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_aud TDATA" *) output [31:0]m_axis_aud_tdata;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_aud TID" *) output [2:0]m_axis_aud_tid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_aud TVALID" *) output m_axis_aud_tvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_aud TREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_aud, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 3, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) input m_axis_aud_tready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_aud TREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_aud, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 3, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 5e+07, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) input m_axis_aud_tready;
 
   wire aud_mclk;
   wire aud_mrst;
@@ -6343,48 +6343,48 @@ module design_1_i2s_receiver_0_0_xpm_cdc_gray__parameterized1
        (.I0(\dest_graysync_ff[1] [6]),
         .I1(\dest_graysync_ff[1] [7]),
         .O(\^dest_out_bin [6]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[0]_i_1 
        (.I0(src_in_bin[1]),
         .I1(src_in_bin[0]),
         .O(gray_enc[0]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[1]_i_1 
        (.I0(src_in_bin[2]),
         .I1(src_in_bin[1]),
         .O(gray_enc[1]));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[2]_i_1 
        (.I0(src_in_bin[3]),
         .I1(src_in_bin[2]),
         .O(gray_enc[2]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[3]_i_1 
        (.I0(src_in_bin[4]),
         .I1(src_in_bin[3]),
         .O(gray_enc[3]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[4]_i_1 
        (.I0(src_in_bin[5]),
         .I1(src_in_bin[4]),
         .O(gray_enc[4]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[5]_i_1 
        (.I0(src_in_bin[6]),
         .I1(src_in_bin[5]),
         .O(gray_enc[5]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[6]_i_1 
@@ -7831,7 +7831,7 @@ module design_1_i2s_receiver_0_0_xpm_counter_updn__parameterized2
         .I4(Q[5]),
         .I5(Q[7]),
         .O(src_in_bin[5]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT5 #(
     .INIT(32'hAAAAAAA9)) 
     \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_2 
@@ -7841,7 +7841,7 @@ module design_1_i2s_receiver_0_0_xpm_counter_updn__parameterized2
         .I3(Q[3]),
         .I4(Q[5]),
         .O(src_in_bin[4]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT4 #(
     .INIT(16'hFE01)) 
     \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_3 
@@ -7867,7 +7867,7 @@ module design_1_i2s_receiver_0_0_xpm_counter_updn__parameterized2
         .I4(\grdc.rd_data_count_i_reg[3]_0 ),
         .I5(Q[3]),
         .O(src_in_bin[1]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT5 #(
     .INIT(32'h9A55AA9A)) 
     \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_6 
@@ -7877,7 +7877,7 @@ module design_1_i2s_receiver_0_0_xpm_counter_updn__parameterized2
         .I3(Q[1]),
         .I4(\grdc.rd_data_count_i_reg[3]_0 ),
         .O(src_in_bin[0]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT5 #(
     .INIT(32'hFFFFDD4D)) 
     \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_9 
@@ -10684,7 +10684,7 @@ module design_1_i2s_receiver_0_0_xpm_fifo_rst
         .D(\gen_rst_ic.next_rrst_state [1]),
         .Q(\gen_rst_ic.curr_rrst_state [1]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'h06)) 
     \__0/i_ 
@@ -10692,7 +10692,7 @@ module design_1_i2s_receiver_0_0_xpm_fifo_rst
         .I1(\gen_rst_ic.curr_rrst_state [1]),
         .I2(\gen_rst_ic.curr_rrst_state [0]),
         .O(\gen_rst_ic.next_rrst_state [0]));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'h3E)) 
     \gen_rst_ic.fifo_rd_rst_ic_i_1 
@@ -10725,6 +10725,7 @@ module design_1_i2s_receiver_0_0_xpm_fifo_rst
        (.I0(p_0_in),
         .I1(rst),
         .O(rst_i__0));
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT5 #(
     .INIT(32'h00010116)) 
     \gen_rst_ic.fifo_wr_rst_ic_i_3 
@@ -10788,7 +10789,6 @@ module design_1_i2s_receiver_0_0_xpm_fifo_rst
         .I3(\gen_rst_ic.wr_rst_busy_ic_i_2_n_0 ),
         .I4(wrst_busy),
         .O(\gen_rst_ic.wr_rst_busy_ic_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT5 #(
     .INIT(32'h00000116)) 
     \gen_rst_ic.wr_rst_busy_ic_i_2 
@@ -10826,7 +10826,7 @@ module design_1_i2s_receiver_0_0_xpm_fifo_rst
         .I2(wrst_busy),
         .I3(rst_d1),
         .O(wr_pntr_plus1_pf_carry));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT3 #(
     .INIT(8'hF1)) 
     \grdc.rd_data_count_i[7]_i_1 
@@ -10834,7 +10834,7 @@ module design_1_i2s_receiver_0_0_xpm_fifo_rst
         .I1(Q[0]),
         .I2(\gen_rst_ic.fifo_rd_rst_ic_reg_0 ),
         .O(SR));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT3 #(
     .INIT(8'hE0)) 
     \guf.underflow_i_i_1 
@@ -12808,7 +12808,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_aes_enc
         .D(rAudValid_Out_i_2_n_0),
         .Q(rAudValid_Out_reg_0),
         .R(iRst0));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT5 #(
     .INIT(32'h00005700)) 
     \rAudioFrameCount[0]_i_1 
@@ -12836,7 +12836,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_aes_enc
         .I1(rAudioFrameCount[0]),
         .I2(rAudioFrameCount[1]),
         .O(\rAudioFrameCount[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
     \rAudioFrameCount[3]_i_1 
@@ -12845,7 +12845,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_aes_enc
         .I2(rAudioFrameCount[1]),
         .I3(rAudioFrameCount[0]),
         .O(\rAudioFrameCount[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \rAudioFrameCount[4]_i_1 
@@ -12891,7 +12891,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_aes_enc
         .I2(\FSM_onehot_stmAesEncode[2]_i_2_n_0 ),
         .I3(stmAesEncode__0[2]),
         .O(rAudioFrameCount_1));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT4 #(
     .INIT(16'h4200)) 
     \rAudioFrameCount[7]_i_2 
@@ -15983,7 +15983,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .D(stmRead[2]),
         .Q(stmRead[3]),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT5 #(
     .INIT(32'h4747FF33)) 
     \FSM_sequential_stmWrite[0]_i_1 
@@ -15993,7 +15993,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I3(s_axi_ctrl_wvalid),
         .I4(stmWrite[0]),
         .O(\FSM_sequential_stmWrite[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT4 #(
     .INIT(16'h38F8)) 
     \FSM_sequential_stmWrite[1]_i_1 
@@ -16172,7 +16172,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
        (.I0(rReadAddr[4]),
         .I1(rReadAddr[5]),
         .O(\oAxi_RData[0]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \oAxi_RData[0]_i_8 
@@ -16373,7 +16373,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I4(\rAesChannelStatus_reg[191]_0 [144]),
         .I5(\oAxi_RData[31]_i_6_n_0 ),
         .O(\oAxi_RData[16]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT3 #(
     .INIT(8'h10)) 
     \oAxi_RData[16]_i_4 
@@ -16499,7 +16499,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I4(\rAesChannelStatus_reg[191]_0 [65]),
         .I5(\oAxi_RData[31]_i_7_n_0 ),
         .O(\oAxi_RData[1]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT5 #(
     .INIT(32'hFFFF2000)) 
     \oAxi_RData[1]_i_5 
@@ -16529,7 +16529,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I4(rReadAddr[3]),
         .I5(\oAxi_RData[0]_i_7_n_0 ),
         .O(\oAxi_RData[1]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \oAxi_RData[1]_i_8 
@@ -16840,7 +16840,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I4(\oAxi_RData[2]_i_7_n_0 ),
         .I5(rChannelMux_23[2]),
         .O(\oAxi_RData[2]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT5 #(
     .INIT(32'h00100000)) 
     \oAxi_RData[2]_i_4 
@@ -16870,7 +16870,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I4(\rAesChannelStatus_reg[191]_0 [66]),
         .I5(\oAxi_RData[31]_i_7_n_0 ),
         .O(\oAxi_RData[2]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \oAxi_RData[2]_i_7 
@@ -16878,7 +16878,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I1(rReadAddr[4]),
         .I2(\oAxi_RData[2]_i_8_n_0 ),
         .O(\oAxi_RData[2]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT5 #(
     .INIT(32'h00000100)) 
     \oAxi_RData[2]_i_8 
@@ -16936,7 +16936,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I3(rReadAddr[4]),
         .I4(rReadAddr[5]),
         .O(\oAxi_RData[31]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT3 #(
     .INIT(8'h02)) 
     \oAxi_RData[31]_i_11 
@@ -17010,7 +17010,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I3(\oAxi_RData[31]_i_9_n_0 ),
         .I4(rReadAddr[2]),
         .O(\oAxi_RData[31]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT5 #(
     .INIT(32'h01000000)) 
     \oAxi_RData[31]_i_9 
@@ -17196,7 +17196,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I4(\rAesChannelStatus_reg[191]_0 [169]),
         .I5(\oAxi_RData[9]_i_4_n_0 ),
         .O(\oAxi_RData[9]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT5 #(
     .INIT(32'h88F88888)) 
     \oAxi_RData[9]_i_2 
@@ -18748,7 +18748,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I4(\rIrqEnables[31]_i_3_n_0 ),
         .I5(\rChannelMux_01_reg[2]_0 [2]),
         .O(\rChannelMux_01[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rChannelMux_01[2]_i_2 
@@ -18844,7 +18844,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I1(\rChannelMux_45[2]_i_2_n_0 ),
         .I2(rChannelMux_45[2]),
         .O(\rChannelMux_45[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT5 #(
     .INIT(32'h00800000)) 
     \rChannelMux_45[2]_i_2 
@@ -18872,7 +18872,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .D(\rChannelMux_45[2]_i_1_n_0 ),
         .Q(rChannelMux_45[2]),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rChannelMux_67[0]_i_1 
@@ -18880,7 +18880,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I1(\rChannelMux_67[2]_i_2_n_0 ),
         .I2(rChannelMux_67[0]),
         .O(\rChannelMux_67[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rChannelMux_67[1]_i_1 
@@ -19028,7 +19028,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi
         .I4(\rIrqEnables[31]_i_3_n_0 ),
         .I5(\rIrqEnables_reg_n_0_[31] ),
         .O(\rIrqEnables[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \rIrqEnables[31]_i_2 
@@ -21040,7 +21040,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_sys
         .aud_mrst_0(I2S_RX_V1_0_TIMGEN_INST_n_3),
         .dest_out(mclk_nSclkDiv),
         .iMRst0(iMRst0),
-        .\rDivCounter_reg[0]_0 (mclk_nEnable),
+        .\rDivCounter_reg[7]_0 (mclk_nEnable),
         .rLRClk1_carry_0(mclk_opmode),
         .rLRClkDelayed(rLRClkDelayed),
         .rLRClk_reg_0(rLRClk_reg),
@@ -22054,7 +22054,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_timgen
     rLRClk_reg_1,
     aud_mclk,
     dest_out,
-    \rDivCounter_reg[0]_0 ,
+    \rDivCounter_reg[7]_0 ,
     aud_mrst,
     rLRClkDelayed,
     rSClkDelayed,
@@ -22067,7 +22067,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_timgen
   output rLRClk_reg_1;
   input aud_mclk;
   input [7:0]dest_out;
-  input \rDivCounter_reg[0]_0 ;
+  input \rDivCounter_reg[7]_0 ;
   input aud_mrst;
   input rLRClkDelayed;
   input rSClkDelayed;
@@ -22133,7 +22133,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_timgen
   wire \rDivCounter[7]_i_1_n_0 ;
   wire \rDivCounter[7]_i_3_n_0 ;
   wire [7:0]rDivCounter_reg;
-  wire \rDivCounter_reg[0]_0 ;
+  wire \rDivCounter_reg[7]_0 ;
   wire rLRClk1;
   wire rLRClk1_carry_0;
   wire rLRClk1_carry__0_i_1_n_0;
@@ -22553,7 +22553,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_timgen
   LUT3 #(
     .INIT(8'hDF)) 
     \rDivCounter[7]_i_1 
-       (.I0(\rDivCounter_reg[0]_0 ),
+       (.I0(\rDivCounter_reg[7]_0 ),
         .I1(aud_mrst),
         .I2(rDivCounter1),
         .O(\rDivCounter[7]_i_1_n_0 ));
@@ -22702,7 +22702,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_timgen
   LUT5 #(
     .INIT(32'hDFDDDDDD)) 
     \rLRClkCounter[0]_i_1 
-       (.I0(\rDivCounter_reg[0]_0 ),
+       (.I0(\rDivCounter_reg[7]_0 ),
         .I1(aud_mrst),
         .I2(rLRClk1),
         .I3(rSClkEnable_reg_n_0),
@@ -22856,7 +22856,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_timgen
     .INIT(4'hB)) 
     rLRClk_i_1
        (.I0(aud_mrst),
-        .I1(\rDivCounter_reg[0]_0 ),
+        .I1(\rDivCounter_reg[7]_0 ),
         .O(iMRst0));
   (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT4 #(
@@ -22886,7 +22886,7 @@ module design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_timgen
     .INIT(64'h0000040000000000)) 
     rLoadSampleRight_i_1
        (.I0(aud_mrst),
-        .I1(\rDivCounter_reg[0]_0 ),
+        .I1(\rDivCounter_reg[7]_0 ),
         .I2(rLRClk_reg_0),
         .I3(rLRClkDelayed),
         .I4(rSClkDelayed),

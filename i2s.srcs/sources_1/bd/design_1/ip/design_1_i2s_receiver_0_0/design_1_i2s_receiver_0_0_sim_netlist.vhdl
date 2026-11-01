@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
--- Date        : Thu Oct 29 09:56:53 2026
+-- Date        : Sun Nov  1 16:24:14 2026
 -- Host        : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 -- Command     : write_vhdl -force -mode funcsim -rename_top design_1_i2s_receiver_0_0 -prefix
 --               design_1_i2s_receiver_0_0_ design_1_i2s_receiver_0_0_sim_netlist.vhdl
@@ -7735,12 +7735,12 @@ architecture STRUCTURE of \design_1_i2s_receiver_0_0_xpm_cdc_gray__parameterized
   attribute KEEP of \dest_graysync_ff_reg[1][7]\ : label is "true";
   attribute XPM_CDC of \dest_graysync_ff_reg[1][7]\ : label is "GRAY";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \src_gray_ff[0]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \src_gray_ff[1]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \src_gray_ff[3]_i_1\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \src_gray_ff[4]_i_1\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \src_gray_ff[5]_i_1\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \src_gray_ff[6]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \src_gray_ff[0]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \src_gray_ff[1]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \src_gray_ff[2]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \src_gray_ff[3]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \src_gray_ff[4]_i_1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \src_gray_ff[5]_i_1\ : label is "soft_lutpair12";
 begin
   dest_out_bin(7) <= \dest_graysync_ff[1]\(7);
   dest_out_bin(6 downto 0) <= \^dest_out_bin\(6 downto 0);
@@ -9379,10 +9379,10 @@ architecture STRUCTURE of \design_1_i2s_receiver_0_0_xpm_counter_updn__parameter
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \count_value_i[3]_i_1__4\ : label is "soft_lutpair18";
   attribute SOFT_HLUTNM of \count_value_i[4]_i_1__4\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_2\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_3\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_6\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_9\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_2\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_3\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_6\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \gen_cdc_pntr.rd_pntr_cdc_dc_inst_i_9\ : label is "soft_lutpair16";
   attribute METHODOLOGY_DRC_VIOS : string;
   attribute METHODOLOGY_DRC_VIOS of \grdc.rd_data_count_i_reg[3]_i_1\ : label is "{SYNTH-8 {cell *THIS*}}";
   attribute METHODOLOGY_DRC_VIOS of \grdc.rd_data_count_i_reg[7]_i_2\ : label is "{SYNTH-8 {cell *THIS*}}";
@@ -12134,12 +12134,12 @@ architecture STRUCTURE of design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_aes_enc 
   attribute FSM_ENCODED_STATES of \FSM_onehot_stmAesEncode_reg[1]\ : label is "sIdle:001,sWaitForCh0Sync:010,sRun:100,";
   attribute FSM_ENCODED_STATES of \FSM_onehot_stmAesEncode_reg[2]\ : label is "sIdle:001,sWaitForCh0Sync:010,sRun:100,";
   attribute SOFT_HLUTNM of \rAudData_Out[1]_i_2\ : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \rAudioFrameCount[0]_i_1\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \rAudioFrameCount[0]_i_1\ : label is "soft_lutpair34";
   attribute SOFT_HLUTNM of \rAudioFrameCount[2]_i_1\ : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \rAudioFrameCount[3]_i_1\ : label is "soft_lutpair34";
-  attribute SOFT_HLUTNM of \rAudioFrameCount[4]_i_1\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \rAudioFrameCount[3]_i_1\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \rAudioFrameCount[4]_i_1\ : label is "soft_lutpair35";
   attribute SOFT_HLUTNM of \rAudioFrameCount[6]_i_1\ : label is "soft_lutpair36";
-  attribute SOFT_HLUTNM of \rAudioFrameCount[7]_i_2\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \rAudioFrameCount[7]_i_2\ : label is "soft_lutpair34";
   attribute SOFT_HLUTNM of \rChannelStatusCapt[191]_i_2\ : label is "soft_lutpair36";
 begin
   follower_empty <= \^follower_empty\;
@@ -17478,32 +17478,32 @@ architecture STRUCTURE of design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_axi is
   attribute FSM_ENCODED_STATES of \FSM_onehot_stmRead_reg[2]\ : label is "sReadReset:0001,sReadAddr:0010,sDecodeAddr:0100,sReadData:1000,";
   attribute FSM_ENCODED_STATES of \FSM_onehot_stmRead_reg[3]\ : label is "sReadReset:0001,sReadAddr:0010,sDecodeAddr:0100,sReadData:1000,";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \FSM_sequential_stmWrite[0]_i_1\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \FSM_sequential_stmWrite[1]_i_1\ : label is "soft_lutpair44";
+  attribute SOFT_HLUTNM of \FSM_sequential_stmWrite[0]_i_1\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \FSM_sequential_stmWrite[1]_i_1\ : label is "soft_lutpair39";
   attribute FSM_ENCODED_STATES of \FSM_sequential_stmWrite_reg[0]\ : label is "sWriteReset:00,sWriteAddr:01,sWriteData:10,sWriteResp:11,";
   attribute FSM_ENCODED_STATES of \FSM_sequential_stmWrite_reg[1]\ : label is "sWriteReset:00,sWriteAddr:01,sWriteData:10,sWriteResp:11,";
   attribute SOFT_HLUTNM of \oAxi_RData[0]_i_11\ : label is "soft_lutpair47";
   attribute SOFT_HLUTNM of \oAxi_RData[0]_i_7\ : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of \oAxi_RData[0]_i_8\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \oAxi_RData[16]_i_4\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \oAxi_RData[1]_i_5\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \oAxi_RData[1]_i_8\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \oAxi_RData[0]_i_8\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \oAxi_RData[16]_i_4\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \oAxi_RData[1]_i_5\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \oAxi_RData[1]_i_8\ : label is "soft_lutpair44";
   attribute SOFT_HLUTNM of \oAxi_RData[1]_i_9\ : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of \oAxi_RData[2]_i_4\ : label is "soft_lutpair42";
-  attribute SOFT_HLUTNM of \oAxi_RData[2]_i_7\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \oAxi_RData[2]_i_8\ : label is "soft_lutpair40";
+  attribute SOFT_HLUTNM of \oAxi_RData[2]_i_4\ : label is "soft_lutpair40";
+  attribute SOFT_HLUTNM of \oAxi_RData[2]_i_7\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \oAxi_RData[2]_i_8\ : label is "soft_lutpair41";
   attribute SOFT_HLUTNM of \oAxi_RData[2]_i_9\ : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of \oAxi_RData[31]_i_11\ : label is "soft_lutpair42";
-  attribute SOFT_HLUTNM of \oAxi_RData[31]_i_9\ : label is "soft_lutpair40";
-  attribute SOFT_HLUTNM of \oAxi_RData[9]_i_2\ : label is "soft_lutpair39";
-  attribute SOFT_HLUTNM of \rChannelMux_01[2]_i_2\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \oAxi_RData[31]_i_11\ : label is "soft_lutpair40";
+  attribute SOFT_HLUTNM of \oAxi_RData[31]_i_9\ : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of \oAxi_RData[9]_i_2\ : label is "soft_lutpair44";
+  attribute SOFT_HLUTNM of \rChannelMux_01[2]_i_2\ : label is "soft_lutpair42";
   attribute SOFT_HLUTNM of \rChannelMux_45[0]_i_1\ : label is "soft_lutpair49";
   attribute SOFT_HLUTNM of \rChannelMux_45[1]_i_1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \rChannelMux_45[2]_i_2\ : label is "soft_lutpair45";
-  attribute SOFT_HLUTNM of \rChannelMux_67[0]_i_1\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \rChannelMux_67[1]_i_1\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \rChannelMux_45[2]_i_2\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \rChannelMux_67[0]_i_1\ : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \rChannelMux_67[1]_i_1\ : label is "soft_lutpair46";
   attribute SOFT_HLUTNM of \rChannelMux_67[2]_i_2\ : label is "soft_lutpair43";
-  attribute SOFT_HLUTNM of \rIrqEnables[31]_i_2\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \rIrqEnables[31]_i_2\ : label is "soft_lutpair43";
   attribute SOFT_HLUTNM of \rReadAddr[0]_i_1\ : label is "soft_lutpair54";
   attribute SOFT_HLUTNM of \rReadAddr[1]_i_1\ : label is "soft_lutpair54";
   attribute SOFT_HLUTNM of \rReadAddr[2]_i_1\ : label is "soft_lutpair53";
@@ -23505,7 +23505,7 @@ entity design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3_timgen is
     rLRClk_reg_1 : out STD_LOGIC;
     aud_mclk : in STD_LOGIC;
     dest_out : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    \rDivCounter_reg[0]_0\ : in STD_LOGIC;
+    \rDivCounter_reg[7]_0\ : in STD_LOGIC;
     aud_mrst : in STD_LOGIC;
     rLRClkDelayed : in STD_LOGIC;
     rSClkDelayed : in STD_LOGIC;
@@ -24163,7 +24163,7 @@ rDivCounter1_carry_i_9: unisim.vcomponents.LUT6
       INIT => X"DF"
     )
         port map (
-      I0 => \rDivCounter_reg[0]_0\,
+      I0 => \rDivCounter_reg[7]_0\,
       I1 => aud_mrst,
       I2 => rDivCounter1,
       O => \rDivCounter[7]_i_1_n_0\
@@ -24384,7 +24384,7 @@ rLRClk1_carry_i_7: unisim.vcomponents.LUT3
       INIT => X"DFDDDDDD"
     )
         port map (
-      I0 => \rDivCounter_reg[0]_0\,
+      I0 => \rDivCounter_reg[7]_0\,
       I1 => aud_mrst,
       I2 => rLRClk1,
       I3 => rSClkEnable_reg_n_0,
@@ -24614,7 +24614,7 @@ rLRClk_i_1: unisim.vcomponents.LUT2
     )
         port map (
       I0 => aud_mrst,
-      I1 => \rDivCounter_reg[0]_0\,
+      I1 => \rDivCounter_reg[7]_0\,
       O => \^imrst0\
     );
 rLRClk_i_2: unisim.vcomponents.LUT4
@@ -24653,7 +24653,7 @@ rLoadSampleRight_i_1: unisim.vcomponents.LUT6
     )
         port map (
       I0 => aud_mrst,
-      I1 => \rDivCounter_reg[0]_0\,
+      I1 => \rDivCounter_reg[7]_0\,
       I2 => \^rlrclk_reg_0\,
       I3 => rLRClkDelayed,
       I4 => rSClkDelayed,
@@ -25124,9 +25124,10 @@ architecture STRUCTURE of design_1_i2s_receiver_0_0_xpm_fifo_rst is
   attribute FSM_ENCODED_STATES of \FSM_onehot_gen_rst_ic.curr_wrst_state_reg[4]\ : label is "WRST_OUT:00100,WRST_IN:00010,WRST_GO2IDLE:10000,WRST_EXIT:01000,WRST_IDLE:00001";
   attribute FSM_ENCODED_STATES of \FSM_sequential_gen_rst_ic.curr_rrst_state_reg[0]\ : label is "RRST_IDLE:00,RRST_IN:01,RRST_OUT:10,RRST_EXIT:11";
   attribute FSM_ENCODED_STATES of \FSM_sequential_gen_rst_ic.curr_rrst_state_reg[1]\ : label is "RRST_IDLE:00,RRST_IN:01,RRST_OUT:10,RRST_EXIT:11";
-  attribute SOFT_HLUTNM of \__0/i_\ : label is "soft_lutpair30";
-  attribute SOFT_HLUTNM of \gen_rst_ic.fifo_rd_rst_ic_i_1\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \__0/i_\ : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of \gen_rst_ic.fifo_rd_rst_ic_i_1\ : label is "soft_lutpair31";
   attribute SOFT_HLUTNM of \gen_rst_ic.fifo_wr_rst_ic_i_2\ : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of \gen_rst_ic.fifo_wr_rst_ic_i_3\ : label is "soft_lutpair28";
   attribute DEF_VAL : string;
   attribute DEF_VAL of \gen_rst_ic.rrst_wr_inst\ : label is "1'b0";
   attribute DEST_SYNC_FF : integer;
@@ -25143,7 +25144,6 @@ architecture STRUCTURE of design_1_i2s_receiver_0_0_xpm_fifo_rst is
   attribute XPM_CDC of \gen_rst_ic.rrst_wr_inst\ : label is "SYNC_RST";
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of \gen_rst_ic.rrst_wr_inst\ : label is "TRUE";
-  attribute SOFT_HLUTNM of \gen_rst_ic.wr_rst_busy_ic_i_2\ : label is "soft_lutpair28";
   attribute DEF_VAL of \gen_rst_ic.wrst_rd_inst\ : label is "1'b0";
   attribute DEST_SYNC_FF of \gen_rst_ic.wrst_rd_inst\ : label is 2;
   attribute INIT of \gen_rst_ic.wrst_rd_inst\ : label is "0";
@@ -25152,8 +25152,8 @@ architecture STRUCTURE of design_1_i2s_receiver_0_0_xpm_fifo_rst is
   attribute VERSION of \gen_rst_ic.wrst_rd_inst\ : label is 0;
   attribute XPM_CDC of \gen_rst_ic.wrst_rd_inst\ : label is "SYNC_RST";
   attribute XPM_MODULE of \gen_rst_ic.wrst_rd_inst\ : label is "TRUE";
-  attribute SOFT_HLUTNM of \grdc.rd_data_count_i[7]_i_1\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \guf.underflow_i_i_1\ : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of \grdc.rd_data_count_i[7]_i_1\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \guf.underflow_i_i_1\ : label is "soft_lutpair30";
 begin
   \gen_rst_ic.fifo_rd_rst_ic_reg_0\ <= \^gen_rst_ic.fifo_rd_rst_ic_reg_0\;
   wrst_busy <= \^wrst_busy\;
@@ -28059,7 +28059,7 @@ I2S_RX_V1_0_TIMGEN_INST: entity work.design_1_i2s_receiver_0_0_i2s_receiver_v1_0
       aud_mrst_0 => I2S_RX_V1_0_TIMGEN_INST_n_3,
       dest_out(7 downto 0) => mclk_nSclkDiv(7 downto 0),
       iMRst0 => iMRst0,
-      \rDivCounter_reg[0]_0\ => mclk_nEnable,
+      \rDivCounter_reg[7]_0\ => mclk_nEnable,
       rLRClk1_carry_0 => mclk_opmode,
       rLRClkDelayed => rLRClkDelayed,
       rLRClk_reg_0 => \^rlrclk_reg\,
@@ -29631,14 +29631,14 @@ architecture STRUCTURE of design_1_i2s_receiver_0_0 is
   attribute X_INTERFACE_INFO of irq : signal is "xilinx.com:signal:interrupt:1.0 irq INTERRUPT";
   attribute X_INTERFACE_PARAMETER of irq : signal is "XIL_INTERFACENAME irq, SENSITIVITY LEVEL_HIGH, PortWidth 1";
   attribute X_INTERFACE_INFO of m_axis_aud_aclk : signal is "xilinx.com:signal:clock:1.0 m_axis_aud_aclk CLK";
-  attribute X_INTERFACE_PARAMETER of m_axis_aud_aclk : signal is "XIL_INTERFACENAME m_axis_aud_aclk, ASSOCIATED_BUSIF m_axis_aud, ASSOCIATED_RESET m_axis_aud_aresetn, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of m_axis_aud_aclk : signal is "XIL_INTERFACENAME m_axis_aud_aclk, ASSOCIATED_BUSIF m_axis_aud, ASSOCIATED_RESET m_axis_aud_aresetn, FREQ_HZ 5e+07, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of m_axis_aud_aresetn : signal is "xilinx.com:signal:reset:1.0 m_axis_aud_aresetn RST";
   attribute X_INTERFACE_PARAMETER of m_axis_aud_aresetn : signal is "XIL_INTERFACENAME m_axis_aud_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of m_axis_aud_tready : signal is "xilinx.com:interface:axis:1.0 m_axis_aud TREADY";
-  attribute X_INTERFACE_PARAMETER of m_axis_aud_tready : signal is "XIL_INTERFACENAME m_axis_aud, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 3, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of m_axis_aud_tready : signal is "XIL_INTERFACENAME m_axis_aud, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 3, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 5e+07, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of m_axis_aud_tvalid : signal is "xilinx.com:interface:axis:1.0 m_axis_aud TVALID";
   attribute X_INTERFACE_INFO of s_axi_ctrl_aclk : signal is "xilinx.com:signal:clock:1.0 s_axi_ctrl_aclk CLK";
-  attribute X_INTERFACE_PARAMETER of s_axi_ctrl_aclk : signal is "XIL_INTERFACENAME s_axi_ctrl_aclk, ASSOCIATED_BUSIF s_axi_ctrl, ASSOCIATED_RESET s_axi_ctrl_aresetn, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of s_axi_ctrl_aclk : signal is "XIL_INTERFACENAME s_axi_ctrl_aclk, ASSOCIATED_BUSIF s_axi_ctrl, ASSOCIATED_RESET s_axi_ctrl_aresetn, FREQ_HZ 5e+07, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axi_ctrl_aresetn : signal is "xilinx.com:signal:reset:1.0 s_axi_ctrl_aresetn RST";
   attribute X_INTERFACE_PARAMETER of s_axi_ctrl_aresetn : signal is "XIL_INTERFACENAME s_axi_ctrl_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axi_ctrl_arready : signal is "xilinx.com:interface:aximm:1.0 s_axi_ctrl ARREADY";
@@ -29658,7 +29658,7 @@ architecture STRUCTURE of design_1_i2s_receiver_0_0 is
   attribute X_INTERFACE_INFO of s_axi_ctrl_bresp : signal is "xilinx.com:interface:aximm:1.0 s_axi_ctrl BRESP";
   attribute X_INTERFACE_INFO of s_axi_ctrl_rdata : signal is "xilinx.com:interface:aximm:1.0 s_axi_ctrl RDATA";
   attribute X_INTERFACE_INFO of s_axi_ctrl_rresp : signal is "xilinx.com:interface:aximm:1.0 s_axi_ctrl RRESP";
-  attribute X_INTERFACE_PARAMETER of s_axi_ctrl_rresp : signal is "XIL_INTERFACENAME s_axi_ctrl, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 8, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of s_axi_ctrl_rresp : signal is "XIL_INTERFACENAME s_axi_ctrl, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 5e+07, ID_WIDTH 0, ADDR_WIDTH 8, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axi_ctrl_wdata : signal is "xilinx.com:interface:aximm:1.0 s_axi_ctrl WDATA";
 begin
 inst: entity work.design_1_i2s_receiver_0_0_i2s_receiver_v1_0_3

@@ -45,12 +45,13 @@ int main()
         xil_printf("ERROR: I2S Config not found!\r\n");
         return XST_FAILURE;
     }
-
+//
     status = XI2s_Rx_CfgInitialize(&I2sRx, I2sCfg, I2sCfg->BaseAddress);
     if (status != XST_SUCCESS) {
-        xil_printf("ERROR: I2S Init Failed (%d)!\r\n", status);
-        return XST_FAILURE;
+        xil_printf("WARN: I2S Rx Init returned (%d), proceeding...\r\n", status);
     }
+
+
 
     // Set clock divider: aud_mclk = 12.288MHz, Fs = 48kHz
     status = XI2s_Rx_SetSclkOutDiv(&I2sRx, 12288000, 48000);
@@ -58,12 +59,15 @@ int main()
         xil_printf("WARN: SCLK Div calculation returned %d\r\n", status);
     }
 
-    // Hubungkan Channel 0/1 ke pin I2S fisik
+    // Hubungkan Channel 0/1 ke pin I2S fisik pertama (Mic 1 di L17)
     XI2s_Rx_SetChMux(&I2sRx, XI2S_RX_CHID0, XI2S_RX_CHMUX_XI2S_01);
+
+    // Hubungkan Channel 2/3 ke pin I2S fisik kedua (Mic 2 di L20)
+    XI2s_Rx_SetChMux(&I2sRx, XI2S_RX_CHID1, XI2S_RX_CHMUX_XI2S_23);
 
     // Aktifkan core I2S Receiver (menghasilkan SCK & WS)
     XI2s_Rx_Enable(&I2sRx, TRUE);
-    xil_printf("SUCCESS: I2S Receiver active (SCK/WS running)!\r\n");
+    xil_printf("SUCCESS: I2S Receiver active with 2 Mics (SCK/WS running)!\r\n");
 
     // Inisialisasi I2S Transmitter IP
     xil_printf("[2/3] Initializing I2S Transmitter core...\r\n");
@@ -75,8 +79,8 @@ int main()
 
     status = XI2s_Tx_CfgInitialize(&I2sTx, I2sTxCfg, I2sTxCfg->BaseAddress);
     if (status != XST_SUCCESS) {
-        xil_printf("ERROR: I2S Tx Init Failed (%d)!\r\n", status);
-        return XST_FAILURE;
+        xil_printf("WARN: I2S Tx Init returned (%d), proceeding...\r\n", status);
+//        return XST_FAILURE;
     }
 
     // Set clock divider: 12.288MHz, Fs = 48kHz

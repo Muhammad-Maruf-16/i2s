@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-//Date        : Sat Oct 31 15:45:10 2026
+//Date        : Sun Nov  1 18:32:57 2026
 //Host        : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -34,7 +34,8 @@ module design_1_wrapper
     lrclk_out_0,
     sclk_out_0,
     sdata_0_in_0,
-    sdata_0_out_0);
+    sdata_0_out_0,
+    sdata_1_in_0);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -60,6 +61,7 @@ module design_1_wrapper
   output sclk_out_0;
   input sdata_0_in_0;
   output sdata_0_out_0;
+  input sdata_1_in_0;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -86,6 +88,7 @@ module design_1_wrapper
   wire sclk_out_0;
   wire sdata_0_in_0;
   wire sdata_0_out_0;
+  wire sdata_1_in_0;
 
   design_1 design_1_i
        (.DDR_addr(DDR_addr),
@@ -112,5 +115,6 @@ module design_1_wrapper
         .lrclk_out_0(lrclk_out_0),
         .sclk_out_0(sclk_out_0),
         .sdata_0_in_0(sdata_0_in_0),
-        .sdata_0_out_0(sdata_0_out_0));
+        .sdata_0_out_0(sdata_0_out_0),
+        .sdata_1_in_0(sdata_1_in_0));
 endmodule

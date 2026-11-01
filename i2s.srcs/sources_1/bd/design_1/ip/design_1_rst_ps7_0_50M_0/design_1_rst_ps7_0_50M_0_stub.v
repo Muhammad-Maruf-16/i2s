@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Thu Oct 29 09:59:47 2026
+// Date        : Sun Nov  1 12:53:43 2026
 // Host        : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 // Command     : write_verilog -force -mode synth_stub -rename_top design_1_rst_ps7_0_50M_0 -prefix
 //               design_1_rst_ps7_0_50M_0_ design_1_rst_ps7_0_50M_0_stub.v
