@@ -80,6 +80,7 @@ module design_1_i2s_receiver_0_0 (
   lrclk_out,
   sclk_out,
   sdata_0_in,
+  sdata_1_in,
   m_axis_aud_tdata,
   m_axis_aud_tid,
   m_axis_aud_tvalid,
@@ -144,6 +145,7 @@ output wire irq;
 output wire lrclk_out;
 output wire sclk_out;
 input wire sdata_0_in;
+input wire sdata_1_in;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_aud TDATA" *)
 output wire [31 : 0] m_axis_aud_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_aud TID" *)
@@ -156,7 +158,7 @@ input wire m_axis_aud_tready;
 
   i2s_receiver_v1_0_3 #(
     .C_IS_MASTER(1),
-    .C_NUM_CHANNELS(1),
+    .C_NUM_CHANNELS(2),
     .C_DWIDTH(24),
     .C_DEPTH(128)
   ) inst (
@@ -188,7 +190,7 @@ input wire m_axis_aud_tready;
     .lrclk_in(1'B0),
     .sclk_in(1'B0),
     .sdata_0_in(sdata_0_in),
-    .sdata_1_in(1'B0),
+    .sdata_1_in(sdata_1_in),
     .sdata_2_in(1'B0),
     .sdata_3_in(1'B0),
     .m_axis_aud_tdata(m_axis_aud_tdata),

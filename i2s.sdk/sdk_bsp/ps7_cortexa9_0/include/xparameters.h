@@ -237,7 +237,7 @@
 #define XPAR_I2S_RECEIVER_0_HIGHADDR 0x43C0FFFF
 #define XPAR_I2S_RECEIVER_0_DWIDTH 24
 #define XPAR_I2S_RECEIVER_0_IS_MASTER 1
-#define XPAR_I2S_RECEIVER_0_NUM_CHANNELS 1
+#define XPAR_I2S_RECEIVER_0_NUM_CHANNELS 2
 
 
 /******************************************************************/
@@ -248,7 +248,7 @@
 #define XPAR_XI2SRX_0_HIGHADDR 0x43C0FFFF
 #define XPAR_XI2SRX_0_DWIDTH 24
 #define XPAR_XI2SRX_0_IS_MASTER 1
-#define XPAR_XI2SRX_0_NUM_CHANNELS 1
+#define XPAR_XI2SRX_0_NUM_CHANNELS 2
 
 
 /******************************************************************/

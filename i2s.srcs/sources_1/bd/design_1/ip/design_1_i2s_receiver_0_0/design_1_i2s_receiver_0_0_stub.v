@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Sun Nov  1 16:24:14 2026
+// Date        : Sun Nov  1 12:53:57 2026
 // Host        : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 // Command     : write_verilog -force -mode synth_stub -rename_top design_1_i2s_receiver_0_0 -prefix
 //               design_1_i2s_receiver_0_0_ design_1_i2s_receiver_0_0_stub.v
@@ -20,8 +20,8 @@ module design_1_i2s_receiver_0_0(s_axi_ctrl_aclk, s_axi_ctrl_aresetn,
   s_axi_ctrl_wdata, s_axi_ctrl_bvalid, s_axi_ctrl_bready, s_axi_ctrl_bresp, 
   s_axi_ctrl_arvalid, s_axi_ctrl_arready, s_axi_ctrl_araddr, s_axi_ctrl_rvalid, 
   s_axi_ctrl_rready, s_axi_ctrl_rdata, s_axi_ctrl_rresp, irq, lrclk_out, sclk_out, sdata_0_in, 
-  m_axis_aud_tdata, m_axis_aud_tid, m_axis_aud_tvalid, m_axis_aud_tready)
-/* synthesis syn_black_box black_box_pad_pin="s_axi_ctrl_aclk,s_axi_ctrl_aresetn,aud_mclk,aud_mrst,m_axis_aud_aclk,m_axis_aud_aresetn,s_axi_ctrl_awvalid,s_axi_ctrl_awready,s_axi_ctrl_awaddr[7:0],s_axi_ctrl_wvalid,s_axi_ctrl_wready,s_axi_ctrl_wdata[31:0],s_axi_ctrl_bvalid,s_axi_ctrl_bready,s_axi_ctrl_bresp[1:0],s_axi_ctrl_arvalid,s_axi_ctrl_arready,s_axi_ctrl_araddr[7:0],s_axi_ctrl_rvalid,s_axi_ctrl_rready,s_axi_ctrl_rdata[31:0],s_axi_ctrl_rresp[1:0],irq,lrclk_out,sclk_out,sdata_0_in,m_axis_aud_tdata[31:0],m_axis_aud_tid[2:0],m_axis_aud_tvalid,m_axis_aud_tready" */;
+  sdata_1_in, m_axis_aud_tdata, m_axis_aud_tid, m_axis_aud_tvalid, m_axis_aud_tready)
+/* synthesis syn_black_box black_box_pad_pin="s_axi_ctrl_aclk,s_axi_ctrl_aresetn,aud_mclk,aud_mrst,m_axis_aud_aclk,m_axis_aud_aresetn,s_axi_ctrl_awvalid,s_axi_ctrl_awready,s_axi_ctrl_awaddr[7:0],s_axi_ctrl_wvalid,s_axi_ctrl_wready,s_axi_ctrl_wdata[31:0],s_axi_ctrl_bvalid,s_axi_ctrl_bready,s_axi_ctrl_bresp[1:0],s_axi_ctrl_arvalid,s_axi_ctrl_arready,s_axi_ctrl_araddr[7:0],s_axi_ctrl_rvalid,s_axi_ctrl_rready,s_axi_ctrl_rdata[31:0],s_axi_ctrl_rresp[1:0],irq,lrclk_out,sclk_out,sdata_0_in,sdata_1_in,m_axis_aud_tdata[31:0],m_axis_aud_tid[2:0],m_axis_aud_tvalid,m_axis_aud_tready" */;
   input s_axi_ctrl_aclk;
   input s_axi_ctrl_aresetn;
   input aud_mclk;
@@ -48,6 +48,7 @@ module design_1_i2s_receiver_0_0(s_axi_ctrl_aclk, s_axi_ctrl_aresetn,
   output lrclk_out;
   output sclk_out;
   input sdata_0_in;
+  input sdata_1_in;
   output [31:0]m_axis_aud_tdata;
   output [2:0]m_axis_aud_tid;
   output m_axis_aud_tvalid;

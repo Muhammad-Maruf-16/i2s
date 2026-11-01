@@ -26,7 +26,8 @@
       "axi_dma_0": "",
       "axi_smc": "",
       "axis_tlast_gen_0": "",
-      "i2s_transmitter_0": ""
+      "i2s_transmitter_0": "",
+      "axis_dlms_beamformer_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -267,7 +268,7 @@
         "xci_name": "design_1_i2s_receiver_0_0",
         "parameters": {
           "C_NUM_CHANNELS": {
-            "value": "2"
+            "value": "4"
           }
         }
       },
@@ -644,6 +645,30 @@
           }
         },
         "interface_nets": {
+          "m00_couplers_to_ps7_0_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m02_couplers": {
+            "interface_ports": [
+              "xbar/M02_AXI",
+              "m02_couplers/S_AXI"
+            ]
+          },
+          "s00_couplers_to_xbar": {
+            "interface_ports": [
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
+            ]
+          },
+          "m02_couplers_to_ps7_0_axi_periph": {
+            "interface_ports": [
+              "M02_AXI",
+              "m02_couplers/M_AXI"
+            ]
+          },
           "m01_couplers_to_ps7_0_axi_periph": {
             "interface_ports": [
               "M01_AXI",
@@ -654,30 +679,6 @@
             "interface_ports": [
               "S00_AXI",
               "s00_couplers/S_AXI"
-            ]
-          },
-          "xbar_to_m02_couplers": {
-            "interface_ports": [
-              "xbar/M02_AXI",
-              "m02_couplers/S_AXI"
-            ]
-          },
-          "m02_couplers_to_ps7_0_axi_periph": {
-            "interface_ports": [
-              "M02_AXI",
-              "m02_couplers/M_AXI"
-            ]
-          },
-          "s00_couplers_to_xbar": {
-            "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
-            ]
-          },
-          "m00_couplers_to_ps7_0_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
             ]
           },
           "xbar_to_m01_couplers": {
@@ -997,6 +998,187 @@
             "value": "0"
           }
         }
+      },
+      "axis_dlms_beamformer_0": {
+        "vlnv": "xilinx.com:module_ref:axis_dlms_beamformer:1.0",
+        "xci_name": "design_1_axis_dlms_beamformer_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "axis_dlms_beamformer",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "s_axis": {
+            "mode": "Slave",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "constant"
+              },
+              "HAS_TKEEP": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TLAST": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TREADY": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TSTRB": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TDATA_NUM_BYTES": {
+                "value": "4",
+                "value_src": "constant"
+              },
+              "TDEST_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TID_WIDTH": {
+                "value": "3",
+                "value_src": "constant"
+              },
+              "TUSER_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              }
+            },
+            "port_maps": {
+              "TID": {
+                "physical_name": "s_axis_tid",
+                "direction": "I",
+                "left": "2",
+                "right": "0"
+              },
+              "TDATA": {
+                "physical_name": "s_axis_tdata",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "TVALID": {
+                "physical_name": "s_axis_tvalid",
+                "direction": "I"
+              },
+              "TREADY": {
+                "physical_name": "s_axis_tready",
+                "direction": "O"
+              }
+            }
+          },
+          "m_axis": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "constant"
+              },
+              "HAS_TKEEP": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TLAST": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TREADY": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TSTRB": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TDATA_NUM_BYTES": {
+                "value": "4",
+                "value_src": "constant"
+              },
+              "TDEST_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TID_WIDTH": {
+                "value": "3",
+                "value_src": "constant"
+              },
+              "TUSER_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              }
+            },
+            "port_maps": {
+              "TID": {
+                "physical_name": "m_axis_tid",
+                "direction": "O",
+                "left": "2",
+                "right": "0"
+              },
+              "TDATA": {
+                "physical_name": "m_axis_tdata",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "TVALID": {
+                "physical_name": "m_axis_tvalid",
+                "direction": "O"
+              },
+              "TREADY": {
+                "physical_name": "m_axis_tready",
+                "direction": "I"
+              }
+            }
+          }
+        },
+        "ports": {
+          "aclk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "s_axis:m_axis",
+                "value_src": "constant"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "aresetn",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "constant"
+              }
+            }
+          },
+          "aresetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          }
+        }
       }
     },
     "interface_nets": {
@@ -1054,9 +1236,15 @@
           "i2s_receiver_0/s_axi_ctrl"
         ]
       },
-      "i2s_receiver_0_m_axis_aud": {
+      "axis_dlms_beamformer_0_m_axis": {
         "interface_ports": [
           "i2s_transmitter_0/s_axis_aud",
+          "axis_dlms_beamformer_0/m_axis"
+        ]
+      },
+      "i2s_receiver_0_m_axis_aud": {
+        "interface_ports": [
+          "axis_dlms_beamformer_0/s_axis",
           "i2s_receiver_0/m_axis_aud"
         ]
       }
@@ -1082,7 +1270,8 @@
           "axis_tlast_gen_0/aresetn",
           "i2s_transmitter_0/s_axi_ctrl_aresetn",
           "ps7_0_axi_periph/M02_ARESETN",
-          "i2s_transmitter_0/s_axis_aud_aresetn"
+          "i2s_transmitter_0/s_axis_aud_aresetn",
+          "axis_dlms_beamformer_0/aresetn"
         ]
       },
       "xlconstant_0_dout": {
@@ -1138,13 +1327,20 @@
           "rst_ps7_0_50M/slowest_sync_clk",
           "clk_wiz_0/clk_in1",
           "axi_dma_0/m_axi_s2mm_aclk",
-          "i2s_transmitter_0/s_axis_aud_aclk"
+          "i2s_transmitter_0/s_axis_aud_aclk",
+          "axis_dlms_beamformer_0/aclk"
         ]
       },
       "i2s_transmitter_0_sdata_0_out": {
         "ports": [
           "i2s_transmitter_0/sdata_0_out",
           "sdata_0_out_0"
+        ]
+      },
+      "sdata_1_in_0_1": {
+        "ports": [
+          "sdata_1_in_0",
+          "i2s_receiver_0/sdata_1_in"
         ]
       }
     },

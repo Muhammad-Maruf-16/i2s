@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Sun Nov  1 18:35:49 2026
+| Date         : Sun Nov  1 22:12:05 2026
 | Host         : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 | Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -23,12 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 2
+             Violations found: 3
 +-----------+------------------+----------------------------------------------------+------------+
 | Rule      | Severity         | Description                                        | Violations |
 +-----------+------------------+----------------------------------------------------+------------+
 | TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 1          |
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 1          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                       | 1          |
 +-----------+------------------+----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -41,6 +42,11 @@ Related violations: <none>
 TIMING-27#1 Critical Warning
 Invalid primary clock on hierarchical pin  
 A primary clock design_1_i/clk_wiz_0/inst/clk_in1 is created on an inappropriate internal pin design_1_i/clk_wiz_0/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell design_1_i/axis_dlms_beamformer_0/inst/m_axis_tdata[31]_i_4, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_1_i/axis_dlms_beamformer_0/inst/FSM_sequential_state_reg[0]/CLR, design_1_i/axis_dlms_beamformer_0/inst/FSM_sequential_state_reg[1]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[0]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[10]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[11]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[12]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[13]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[14]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[15]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[16]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[17]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[18]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[19]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[20]/CLR, design_1_i/axis_dlms_beamformer_0/inst/clamped_val_reg[21]/CLR (the first 15 of 127 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 

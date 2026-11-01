@@ -18,57 +18,59 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 462932 
+INFO: Helper process launched with PID 651795 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1702.309 ; gain = 153.719 ; free physical = 207 ; free virtual = 15597
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1702.730 ; gain = 152.719 ; free physical = 1197 ; free virtual = 15352
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_dma_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_axi_dma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_dma_0_0' (1#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_axi_dma_0_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'design_1_axi_dma_0_0' has 43 connections declared, but only 40 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:230]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (2#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axis_tlast_gen_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_axis_tlast_gen_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_tlast_gen_0_0' (3#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_axis_tlast_gen_0_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'axis_tlast_gen_0' of module 'design_1_axis_tlast_gen_0_0' has 9 connections declared, but only 8 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:310]
-INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_0_0' (4#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'design_1_i2s_receiver_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_i2s_receiver_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_i2s_receiver_0_0' (5#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_i2s_receiver_0_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'i2s_receiver_0' of module 'design_1_i2s_receiver_0_0' has 30 connections declared, but only 29 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:322]
-INFO: [Synth 8-6157] synthesizing module 'design_1_i2s_transmitter_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_i2s_transmitter_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_i2s_transmitter_0_0' (6#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_i2s_transmitter_0_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'i2s_transmitter_0' of module 'design_1_i2s_transmitter_0_0' has 30 connections declared, but only 29 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:352]
-INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (7#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_1_processing_system7_0_0' has 107 connections declared, but only 96 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:382]
-INFO: [Synth 8-6157] synthesizing module 'design_1_ps7_0_axi_periph_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:587]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_15SPJYW' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1238]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_15SPJYW' (8#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1238]
-INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_XU9C55' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1363]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_XU9C55' (9#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1363]
-INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_14WQB4R' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1488]
-INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_14WQB4R' (10#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1488]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_UYSKKA' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1613]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (11#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_UYSKKA' (12#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1613]
-INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (13#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_xbar_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'xbar' of module 'design_1_xbar_0' has 40 connections declared, but only 37 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1198]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_ps7_0_axi_periph_0' (14#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:587]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_50M_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_rst_ps7_0_50M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_50M_0' (15#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-462849-maruf-ThinkPad-T470p/realtime/design_1_rst_ps7_0_50M_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'rst_ps7_0_50M' of module 'design_1_rst_ps7_0_50M_0' has 10 connections declared, but only 6 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:576]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_dma_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_axi_dma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_dma_0_0' (1#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_axi_dma_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'design_1_axi_dma_0_0' has 43 connections declared, but only 40 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:236]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (2#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axis_dlms_beamformer_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_axis_dlms_beamformer_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_dlms_beamformer_0_0' (3#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_axis_dlms_beamformer_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axis_tlast_gen_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_axis_tlast_gen_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_tlast_gen_0_0' (4#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_axis_tlast_gen_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'axis_tlast_gen_0' of module 'design_1_axis_tlast_gen_0_0' has 9 connections declared, but only 8 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:327]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_0_0' (5#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_i2s_receiver_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_i2s_receiver_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_i2s_receiver_0_0' (6#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_i2s_receiver_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'i2s_receiver_0' of module 'design_1_i2s_receiver_0_0' has 31 connections declared, but only 30 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:339]
+INFO: [Synth 8-6157] synthesizing module 'design_1_i2s_transmitter_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_i2s_transmitter_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_i2s_transmitter_0_0' (7#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_i2s_transmitter_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'i2s_transmitter_0' of module 'design_1_i2s_transmitter_0_0' has 30 connections declared, but only 29 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:370]
+INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (8#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_1_processing_system7_0_0' has 107 connections declared, but only 96 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:400]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ps7_0_axi_periph_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:605]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_15SPJYW' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1256]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_15SPJYW' (9#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1256]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_XU9C55' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1381]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_XU9C55' (10#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1381]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_14WQB4R' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1506]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_14WQB4R' (11#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1506]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_UYSKKA' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1631]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (12#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_UYSKKA' (13#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1631]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (14#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_xbar_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'design_1_xbar_0' has 40 connections declared, but only 37 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:1216]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ps7_0_axi_periph_0' (15#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:605]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_50M_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_rst_ps7_0_50M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_50M_0' (16#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/.Xil/Vivado-651683-maruf-ThinkPad-T470p/realtime/design_1_rst_ps7_0_50M_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_50M' of module 'design_1_rst_ps7_0_50M_0' has 10 connections declared, but only 6 given [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:594]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 0 - type: integer 
 	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (16#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_0_0' (17#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'design_1' (18#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_wrapper' (19#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (17#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_0_0' (18#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'design_1' (19#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_wrapper' (20#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
 WARNING: [Synth 8-3331] design s00_couplers_imp_UYSKKA has unconnected port M_ACLK
 WARNING: [Synth 8-3331] design s00_couplers_imp_UYSKKA has unconnected port M_ARESETN
 WARNING: [Synth 8-3331] design m02_couplers_imp_14WQB4R has unconnected port M_ACLK
@@ -91,9 +93,8 @@ WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port 
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port M02_ARESETN
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port S00_ACLK
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port S00_ARESETN
-WARNING: [Synth 8-3331] design design_1 has unconnected port sdata_1_in_0
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1762.027 ; gain = 213.438 ; free physical = 194 ; free virtual = 15586
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1762.449 ; gain = 212.438 ; free physical = 1217 ; free virtual = 15373
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -106,10 +107,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1767.965 ; gain = 219.375 ; free physical = 213 ; free virtual = 15604
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1765.418 ; gain = 215.406 ; free physical = 1221 ; free virtual = 15377
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1767.965 ; gain = 219.375 ; free physical = 213 ; free virtual = 15604
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1765.418 ; gain = 215.406 ; free physical = 1221 ; free virtual = 15377
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -133,6 +134,8 @@ Parsing XDC File [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/i
 Finished Parsing XDC File [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_axis_tlast_gen_0_0/design_1_axis_tlast_gen_0_0/design_1_axis_tlast_gen_0_0_in_context.xdc] for cell 'design_1_i/axis_tlast_gen_0'
 Parsing XDC File [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_i2s_transmitter_0_0/design_1_i2s_transmitter_0_0/design_1_i2s_transmitter_0_0_in_context.xdc] for cell 'design_1_i/i2s_transmitter_0'
 Finished Parsing XDC File [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_i2s_transmitter_0_0/design_1_i2s_transmitter_0_0/design_1_i2s_transmitter_0_0_in_context.xdc] for cell 'design_1_i/i2s_transmitter_0'
+Parsing XDC File [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_axis_dlms_beamformer_0_0/design_1_axis_dlms_beamformer_0_0/design_1_axis_dlms_beamformer_0_0_in_context.xdc] for cell 'design_1_i/axis_dlms_beamformer_0'
+Finished Parsing XDC File [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_axis_dlms_beamformer_0_0/design_1_axis_dlms_beamformer_0_0/design_1_axis_dlms_beamformer_0_0_in_context.xdc] for cell 'design_1_i/axis_dlms_beamformer_0'
 Parsing XDC File [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
 Finished Parsing XDC File [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
 Parsing XDC File [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/constrs_1/new/io.xdc]
@@ -143,21 +146,21 @@ Parsing XDC File [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1865.637 ; gain = 0.000 ; free physical = 156 ; free virtual = 15536
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1875.996 ; gain = 0.000 ; free physical = 1134 ; free virtual = 15289
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1865.637 ; gain = 0.000 ; free physical = 156 ; free virtual = 15536
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1875.996 ; gain = 0.000 ; free physical = 1134 ; free virtual = 15289
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc' at clock pin 'aclk' is different from the actual clock period '20.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 290 ; free virtual = 15574
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1194 ; free virtual = 15349
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 290 ; free virtual = 15574
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1194 ; free virtual = 15349
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -434,12 +437,13 @@ Applied set_property DONT_TOUCH = true for design_1_i/axi_dma_0. (constraint fil
 Applied set_property DONT_TOUCH = true for design_1_i/axi_smc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/axis_tlast_gen_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/i2s_transmitter_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axis_dlms_beamformer_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 291 ; free virtual = 15575
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1197 ; free virtual = 15353
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 288 ; free virtual = 15572
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1197 ; free virtual = 15353
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -482,9 +486,8 @@ WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port 
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port M02_ARESETN
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port S00_ACLK
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port S00_ARESETN
-WARNING: [Synth 8-3331] design design_1 has unconnected port sdata_1_in_0
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 276 ; free virtual = 15563
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1189 ; free virtual = 15348
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -501,13 +504,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/clk_wiz_0/clk_
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'design_1_i/clk_wiz_0/clk_in1' to 'design_1_i/processing_system7_0/bbstub_FCLK_CLK0/O'
 INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 178 ; free virtual = 15465
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1063 ; free virtual = 15222
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 178 ; free virtual = 15465
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1063 ; free virtual = 15222
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -519,7 +522,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 176 ; free virtual = 15463
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1055 ; free virtual = 15214
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -543,7 +546,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 178 ; free virtual = 15464
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1056 ; free virtual = 15215
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -556,7 +559,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 178 ; free virtual = 15464
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1056 ; free virtual = 15215
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -568,94 +571,96 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 178 ; free virtual = 15464
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1056 ; free virtual = 15215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 178 ; free virtual = 15464
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1056 ; free virtual = 15215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 178 ; free virtual = 15464
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1056 ; free virtual = 15215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 178 ; free virtual = 15464
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1056 ; free virtual = 15215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+--------------------------------+----------+
-|      |BlackBox name                   |Instances |
-+------+--------------------------------+----------+
-|1     |design_1_xbar_0                 |         1|
-|2     |design_1_auto_pc_0              |         1|
-|3     |design_1_axi_dma_0_0            |         1|
-|4     |design_1_axi_smc_0              |         1|
-|5     |design_1_axis_tlast_gen_0_0     |         1|
-|6     |design_1_clk_wiz_0_0            |         1|
-|7     |design_1_i2s_receiver_0_0       |         1|
-|8     |design_1_i2s_transmitter_0_0    |         1|
-|9     |design_1_processing_system7_0_0 |         1|
-|10    |design_1_rst_ps7_0_50M_0        |         1|
-+------+--------------------------------+----------+
++------+----------------------------------+----------+
+|      |BlackBox name                     |Instances |
++------+----------------------------------+----------+
+|1     |design_1_xbar_0                   |         1|
+|2     |design_1_auto_pc_0                |         1|
+|3     |design_1_axi_dma_0_0              |         1|
+|4     |design_1_axi_smc_0                |         1|
+|5     |design_1_axis_dlms_beamformer_0_0 |         1|
+|6     |design_1_axis_tlast_gen_0_0       |         1|
+|7     |design_1_clk_wiz_0_0              |         1|
+|8     |design_1_i2s_receiver_0_0         |         1|
+|9     |design_1_i2s_transmitter_0_0      |         1|
+|10    |design_1_processing_system7_0_0   |         1|
+|11    |design_1_rst_ps7_0_50M_0          |         1|
++------+----------------------------------+----------+
 
 Report Cell Usage: 
-+------+--------------------------------+------+
-|      |Cell                            |Count |
-+------+--------------------------------+------+
-|1     |design_1_auto_pc_0              |     1|
-|2     |design_1_axi_dma_0_0            |     1|
-|3     |design_1_axi_smc_0              |     1|
-|4     |design_1_axis_tlast_gen_0_0     |     1|
-|5     |design_1_clk_wiz_0_0            |     1|
-|6     |design_1_i2s_receiver_0_0       |     1|
-|7     |design_1_i2s_transmitter_0_0    |     1|
-|8     |design_1_processing_system7_0_0 |     1|
-|9     |design_1_rst_ps7_0_50M_0        |     1|
-|10    |design_1_xbar_0                 |     1|
-|11    |IBUF                            |     1|
-|12    |OBUF                            |     3|
-+------+--------------------------------+------+
++------+----------------------------------+------+
+|      |Cell                              |Count |
++------+----------------------------------+------+
+|1     |design_1_auto_pc_0                |     1|
+|2     |design_1_axi_dma_0_0              |     1|
+|3     |design_1_axi_smc_0                |     1|
+|4     |design_1_axis_dlms_beamformer_0_0 |     1|
+|5     |design_1_axis_tlast_gen_0_0       |     1|
+|6     |design_1_clk_wiz_0_0              |     1|
+|7     |design_1_i2s_receiver_0_0         |     1|
+|8     |design_1_i2s_transmitter_0_0      |     1|
+|9     |design_1_processing_system7_0_0   |     1|
+|10    |design_1_rst_ps7_0_50M_0          |     1|
+|11    |design_1_xbar_0                   |     1|
+|12    |IBUF                              |     2|
+|13    |OBUF                              |     3|
++------+----------------------------------+------+
 
 Report Instance Areas: 
 +------+---------------------+----------------------------+------+
 |      |Instance             |Module                      |Cells |
 +------+---------------------+----------------------------+------+
-|1     |top                  |                            |  1322|
-|2     |  design_1_i         |design_1                    |  1318|
+|1     |top                  |                            |  1360|
+|2     |  design_1_i         |design_1                    |  1355|
 |3     |    ps7_0_axi_periph |design_1_ps7_0_axi_periph_0 |   551|
 |4     |      s00_couplers   |s00_couplers_imp_UYSKKA     |   177|
 |5     |    xlconstant_0     |design_1_xlconstant_0_0     |     0|
 +------+---------------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 178 ; free virtual = 15464
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1056 ; free virtual = 15215
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1869.605 ; gain = 219.375 ; free physical = 220 ; free virtual = 15507
-Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1869.605 ; gain = 321.016 ; free physical = 220 ; free virtual = 15507
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1878.965 ; gain = 215.406 ; free physical = 1102 ; free virtual = 15261
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1878.965 ; gain = 328.953 ; free physical = 1102 ; free virtual = 15261
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1869.605 ; gain = 0.000 ; free physical = 198 ; free virtual = 15484
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1878.965 ; gain = 0.000 ; free physical = 1072 ; free virtual = 15231
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-56 Infos, 40 Warnings, 0 Critical Warnings and 0 Errors encountered.
+58 Infos, 38 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1869.605 ; gain = 344.203 ; free physical = 263 ; free virtual = 15549
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1869.605 ; gain = 0.000 ; free physical = 263 ; free virtual = 15549
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1878.965 ; gain = 359.047 ; free physical = 1137 ; free virtual = 15296
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1878.965 ; gain = 0.000 ; free physical = 1137 ; free virtual = 15296
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/maruf/fpga_ebaz4205/i2s/i2s.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 18:34:15 2026...
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 22:10:40 2026...
