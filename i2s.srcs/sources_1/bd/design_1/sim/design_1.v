@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-//Date        : Sun Nov  1 22:01:43 2026
+//Date        : Mon Nov  2 13:18:28 2026
 //Host        : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=17,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=4,da_clkrst_cnt=18,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=18,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=4,da_clkrst_cnt=18,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR_addr,
     DDR_ba,
@@ -102,6 +102,10 @@ module design_1
   wire [2:0]axis_dlms_beamformer_0_m_axis_TID;
   wire axis_dlms_beamformer_0_m_axis_TREADY;
   wire axis_dlms_beamformer_0_m_axis_TVALID;
+  wire [31:0]axis_noise_gate_0_m_axis_TDATA;
+  wire [2:0]axis_noise_gate_0_m_axis_TID;
+  wire axis_noise_gate_0_m_axis_TREADY;
+  wire axis_noise_gate_0_m_axis_TVALID;
   wire [31:0]axis_tlast_gen_0_m_axis_TDATA;
   wire axis_tlast_gen_0_m_axis_TLAST;
   wire axis_tlast_gen_0_m_axis_TREADY;
@@ -324,6 +328,17 @@ module design_1
         .s_axis_tid(i2s_receiver_0_m_axis_aud_TID),
         .s_axis_tready(i2s_receiver_0_m_axis_aud_TREADY),
         .s_axis_tvalid(i2s_receiver_0_m_axis_aud_TVALID));
+  design_1_axis_noise_gate_0_0 axis_noise_gate_0
+       (.aclk(processing_system7_0_FCLK_CLK0),
+        .aresetn(rst_ps7_0_50M_peripheral_aresetn),
+        .m_axis_tdata(axis_noise_gate_0_m_axis_TDATA),
+        .m_axis_tid(axis_noise_gate_0_m_axis_TID),
+        .m_axis_tready(axis_noise_gate_0_m_axis_TREADY),
+        .m_axis_tvalid(axis_noise_gate_0_m_axis_TVALID),
+        .s_axis_tdata(axis_dlms_beamformer_0_m_axis_TDATA),
+        .s_axis_tid(axis_dlms_beamformer_0_m_axis_TID),
+        .s_axis_tready(axis_dlms_beamformer_0_m_axis_TREADY),
+        .s_axis_tvalid(axis_dlms_beamformer_0_m_axis_TVALID));
   design_1_axis_tlast_gen_0_0 axis_tlast_gen_0
        (.aclk(processing_system7_0_FCLK_CLK0),
         .aresetn(rst_ps7_0_50M_peripheral_aresetn),
@@ -391,10 +406,10 @@ module design_1
         .s_axi_ctrl_wvalid(ps7_0_axi_periph_M02_AXI_WVALID),
         .s_axis_aud_aclk(processing_system7_0_FCLK_CLK0),
         .s_axis_aud_aresetn(rst_ps7_0_50M_peripheral_aresetn),
-        .s_axis_aud_tdata(axis_dlms_beamformer_0_m_axis_TDATA),
-        .s_axis_aud_tid(axis_dlms_beamformer_0_m_axis_TID),
-        .s_axis_aud_tready(axis_dlms_beamformer_0_m_axis_TREADY),
-        .s_axis_aud_tvalid(axis_dlms_beamformer_0_m_axis_TVALID),
+        .s_axis_aud_tdata(axis_noise_gate_0_m_axis_TDATA),
+        .s_axis_aud_tid(axis_noise_gate_0_m_axis_TID),
+        .s_axis_aud_tready(axis_noise_gate_0_m_axis_TREADY),
+        .s_axis_aud_tvalid(axis_noise_gate_0_m_axis_TVALID),
         .sclk_in(i2s_receiver_0_sclk_out),
         .sdata_0_out(i2s_transmitter_0_sdata_0_out));
   design_1_processing_system7_0_0 processing_system7_0

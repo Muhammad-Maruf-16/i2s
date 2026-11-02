@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
--- Date        : Sun Nov  1 22:02:20 2026
+-- Date        : Mon Nov  2 13:19:30 2026
 -- Host        : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_axis_dlms_beamformer_0_0_sim_netlist.vhdl
@@ -16,7 +16,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_axis_dlms_beamformer is
   port (
-    m_axis_tdata : out STD_LOGIC_VECTOR ( 28 downto 0 );
+    m_axis_tdata : out STD_LOGIC_VECTOR ( 30 downto 0 );
     m_axis_tid : out STD_LOGIC_VECTOR ( 0 to 0 );
     m_axis_tvalid : out STD_LOGIC;
     m_axis_tready : in STD_LOGIC;
@@ -47,7 +47,6 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_axis_dlms_be
   signal clamped_val1_carry_i_3_n_0 : STD_LOGIC;
   signal clamped_val1_carry_i_4_n_0 : STD_LOGIC;
   signal clamped_val1_carry_i_5_n_0 : STD_LOGIC;
-  signal clamped_val1_carry_i_6_n_0 : STD_LOGIC;
   signal clamped_val1_carry_n_0 : STD_LOGIC;
   signal clamped_val1_carry_n_1 : STD_LOGIC;
   signal clamped_val1_carry_n_2 : STD_LOGIC;
@@ -75,6 +74,8 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_axis_dlms_be
   signal \clamped_val[22]_i_1_n_0\ : STD_LOGIC;
   signal \clamped_val[23]_i_1_n_0\ : STD_LOGIC;
   signal \clamped_val[23]_i_2_n_0\ : STD_LOGIC;
+  signal \clamped_val[2]_i_1_n_0\ : STD_LOGIC;
+  signal \clamped_val[3]_i_1_n_0\ : STD_LOGIC;
   signal \clamped_val[4]_i_1_n_0\ : STD_LOGIC;
   signal \clamped_val[5]_i_1_n_0\ : STD_LOGIC;
   signal \clamped_val[6]_i_1_n_0\ : STD_LOGIC;
@@ -161,7 +162,6 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_axis_dlms_be
   signal \i__carry_i_2_n_0\ : STD_LOGIC;
   signal \i__carry_i_3_n_0\ : STD_LOGIC;
   signal \i__carry_i_4_n_0\ : STD_LOGIC;
-  signal \i__carry_i_5_n_0\ : STD_LOGIC;
   signal m_axis_tdata0_in : STD_LOGIC_VECTOR ( 27 downto 1 );
   signal \m_axis_tdata[0]_i_1_n_0\ : STD_LOGIC;
   signal \m_axis_tdata[2]_i_1_n_0\ : STD_LOGIC;
@@ -201,12 +201,12 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_axis_dlms_be
   attribute FSM_ENCODED_STATES : string;
   attribute FSM_ENCODED_STATES of \FSM_sequential_state_reg[0]\ : label is "IDLE:00,CALC:01,SEND_CH0:10,SEND_CH1:11,";
   attribute FSM_ENCODED_STATES of \FSM_sequential_state_reg[1]\ : label is "IDLE:00,CALC:01,SEND_CH0:10,SEND_CH1:11,";
-  attribute SOFT_HLUTNM of \clamped_val[10]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \clamped_val[10]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \clamped_val[11]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \clamped_val[12]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \clamped_val[13]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \clamped_val[14]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \clamped_val[15]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \clamped_val[13]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \clamped_val[14]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \clamped_val[15]_i_1\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \clamped_val[16]_i_1\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \clamped_val[17]_i_1\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \clamped_val[18]_i_1\ : label is "soft_lutpair6";
@@ -215,16 +215,18 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_axis_dlms_be
   attribute SOFT_HLUTNM of \clamped_val[21]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \clamped_val[22]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \clamped_val[23]_i_2\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \clamped_val[2]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \clamped_val[3]_i_1\ : label is "soft_lutpair11";
   attribute SOFT_HLUTNM of \clamped_val[4]_i_1\ : label is "soft_lutpair10";
   attribute SOFT_HLUTNM of \clamped_val[5]_i_1\ : label is "soft_lutpair10";
   attribute SOFT_HLUTNM of \clamped_val[6]_i_1\ : label is "soft_lutpair9";
   attribute SOFT_HLUTNM of \clamped_val[7]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \clamped_val[8]_i_1\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \clamped_val[9]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \m_axis_tdata[0]_i_1\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \m_axis_tdata[2]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \m_axis_tdata[3]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \m_axis_tdata[7]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \clamped_val[8]_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \clamped_val[9]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \m_axis_tdata[0]_i_1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \m_axis_tdata[2]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \m_axis_tdata[3]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \m_axis_tdata[5]_i_1\ : label is "soft_lutpair12";
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of \m_axis_tdata_reg[0]\ : label is "xilinx.com:interface:axis:1.0 m_axis TDATA";
   attribute X_INTERFACE_INFO of \m_axis_tdata_reg[10]\ : label is "xilinx.com:interface:axis:1.0 m_axis TDATA";
@@ -252,6 +254,8 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_axis_dlms_be
   attribute X_INTERFACE_INFO of \m_axis_tdata_reg[30]\ : label is "xilinx.com:interface:axis:1.0 m_axis TDATA";
   attribute X_INTERFACE_INFO of \m_axis_tdata_reg[31]\ : label is "xilinx.com:interface:axis:1.0 m_axis TDATA";
   attribute X_INTERFACE_INFO of \m_axis_tdata_reg[3]\ : label is "xilinx.com:interface:axis:1.0 m_axis TDATA";
+  attribute X_INTERFACE_INFO of \m_axis_tdata_reg[5]\ : label is "xilinx.com:interface:axis:1.0 m_axis TDATA";
+  attribute X_INTERFACE_INFO of \m_axis_tdata_reg[6]\ : label is "xilinx.com:interface:axis:1.0 m_axis TDATA";
   attribute X_INTERFACE_INFO of \m_axis_tdata_reg[7]\ : label is "xilinx.com:interface:axis:1.0 m_axis TDATA";
   attribute X_INTERFACE_INFO of \m_axis_tdata_reg[8]\ : label is "xilinx.com:interface:axis:1.0 m_axis TDATA";
   attribute X_INTERFACE_INFO of \m_axis_tdata_reg[9]\ : label is "xilinx.com:interface:axis:1.0 m_axis TDATA";
@@ -311,8 +315,8 @@ clamped_val1_carry: unisim.vcomponents.CARRY4
       O(3 downto 0) => NLW_clamped_val1_carry_O_UNCONNECTED(3 downto 0),
       S(3) => p_0_in0,
       S(2) => p_0_in0,
-      S(1) => clamped_val1_carry_i_5_n_0,
-      S(0) => clamped_val1_carry_i_6_n_0
+      S(1) => p_0_in0,
+      S(0) => clamped_val1_carry_i_5_n_0
     );
 \clamped_val1_carry__0\: unisim.vcomponents.CARRY4
      port map (
@@ -391,13 +395,12 @@ clamped_val1_carry_i_2: unisim.vcomponents.LUT1
       I0 => p_0_in0,
       O => clamped_val1_carry_i_2_n_0
     );
-clamped_val1_carry_i_3: unisim.vcomponents.LUT2
+clamped_val1_carry_i_3: unisim.vcomponents.LUT1
     generic map(
-      INIT => X"7"
+      INIT => X"1"
     )
         port map (
-      I0 => \d_val_reg_n_0_[20]\,
-      I1 => \d_val_reg_n_0_[21]\,
+      I0 => p_0_in0,
       O => clamped_val1_carry_i_3_n_0
     );
 clamped_val1_carry_i_4: unisim.vcomponents.LUT1
@@ -405,26 +408,17 @@ clamped_val1_carry_i_4: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => \d_val_reg_n_0_[19]\,
+      I0 => \d_val_reg_n_0_[21]\,
       O => clamped_val1_carry_i_4_n_0
     );
 clamped_val1_carry_i_5: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"8"
+      INIT => X"2"
     )
         port map (
       I0 => \d_val_reg_n_0_[21]\,
       I1 => \d_val_reg_n_0_[20]\,
       O => clamped_val1_carry_i_5_n_0
-    );
-clamped_val1_carry_i_6: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => \d_val_reg_n_0_[19]\,
-      I1 => \d_val_reg_n_0_[18]\,
-      O => clamped_val1_carry_i_6_n_0
     );
 \clamped_val1_inferred__0/i__carry\: unisim.vcomponents.CARRY4
      port map (
@@ -436,13 +430,13 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CYINIT => '0',
       DI(3) => p_0_in0,
       DI(2) => p_0_in0,
-      DI(1) => \i__carry_i_1_n_0\,
-      DI(0) => \d_val_reg_n_0_[19]\,
+      DI(1) => p_0_in0,
+      DI(0) => \d_val_reg_n_0_[21]\,
       O(3 downto 0) => \NLW_clamped_val1_inferred__0/i__carry_O_UNCONNECTED\(3 downto 0),
-      S(3) => \i__carry_i_2_n_0\,
-      S(2) => \i__carry_i_3_n_0\,
-      S(1) => \i__carry_i_4_n_0\,
-      S(0) => \i__carry_i_5_n_0\
+      S(3) => \i__carry_i_1_n_0\,
+      S(2) => \i__carry_i_2_n_0\,
+      S(1) => \i__carry_i_3_n_0\,
+      S(0) => \i__carry_i_4_n_0\
     );
 \clamped_val1_inferred__0/i__carry__0\: unisim.vcomponents.CARRY4
      port map (
@@ -479,7 +473,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[6]\,
+      I1 => \d_val_reg_n_0_[8]\,
       I2 => clamped_val10_in,
       O => \clamped_val[10]_i_1_n_0\
     );
@@ -489,7 +483,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[7]\,
+      I1 => \d_val_reg_n_0_[9]\,
       I2 => clamped_val10_in,
       O => \clamped_val[11]_i_1_n_0\
     );
@@ -499,7 +493,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[8]\,
+      I1 => \d_val_reg_n_0_[10]\,
       I2 => clamped_val10_in,
       O => \clamped_val[12]_i_1_n_0\
     );
@@ -509,7 +503,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[9]\,
+      I1 => \d_val_reg_n_0_[11]\,
       I2 => clamped_val10_in,
       O => \clamped_val[13]_i_1_n_0\
     );
@@ -519,7 +513,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[10]\,
+      I1 => \d_val_reg_n_0_[12]\,
       I2 => clamped_val10_in,
       O => \clamped_val[14]_i_1_n_0\
     );
@@ -529,7 +523,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[11]\,
+      I1 => \d_val_reg_n_0_[13]\,
       I2 => clamped_val10_in,
       O => \clamped_val[15]_i_1_n_0\
     );
@@ -539,7 +533,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[12]\,
+      I1 => \d_val_reg_n_0_[14]\,
       I2 => clamped_val10_in,
       O => \clamped_val[16]_i_1_n_0\
     );
@@ -549,7 +543,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[13]\,
+      I1 => \d_val_reg_n_0_[15]\,
       I2 => clamped_val10_in,
       O => \clamped_val[17]_i_1_n_0\
     );
@@ -559,7 +553,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[14]\,
+      I1 => \d_val_reg_n_0_[16]\,
       I2 => clamped_val10_in,
       O => \clamped_val[18]_i_1_n_0\
     );
@@ -569,7 +563,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[15]\,
+      I1 => \d_val_reg_n_0_[17]\,
       I2 => clamped_val10_in,
       O => \clamped_val[19]_i_1_n_0\
     );
@@ -579,7 +573,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[16]\,
+      I1 => \d_val_reg_n_0_[18]\,
       I2 => clamped_val10_in,
       O => \clamped_val[20]_i_1_n_0\
     );
@@ -589,7 +583,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[17]\,
+      I1 => \d_val_reg_n_0_[19]\,
       I2 => clamped_val10_in,
       O => \clamped_val[21]_i_1_n_0\
     );
@@ -599,7 +593,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[18]\,
+      I1 => \d_val_reg_n_0_[20]\,
       I2 => clamped_val10_in,
       O => \clamped_val[22]_i_1_n_0\
     );
@@ -618,10 +612,30 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       INIT => X"0E"
     )
         port map (
-      I0 => \d_val_reg_n_0_[19]\,
+      I0 => \d_val_reg_n_0_[21]\,
       I1 => clamped_val1,
       I2 => clamped_val10_in,
       O => \clamped_val[23]_i_2_n_0\
+    );
+\clamped_val[2]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"F4"
+    )
+        port map (
+      I0 => clamped_val1,
+      I1 => \d_val_reg_n_0_[0]\,
+      I2 => clamped_val10_in,
+      O => \clamped_val[2]_i_1_n_0\
+    );
+\clamped_val[3]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"F4"
+    )
+        port map (
+      I0 => clamped_val1,
+      I1 => \d_val_reg_n_0_[1]\,
+      I2 => clamped_val10_in,
+      O => \clamped_val[3]_i_1_n_0\
     );
 \clamped_val[4]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -629,7 +643,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[0]\,
+      I1 => \d_val_reg_n_0_[2]\,
       I2 => clamped_val10_in,
       O => \clamped_val[4]_i_1_n_0\
     );
@@ -639,7 +653,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[1]\,
+      I1 => \d_val_reg_n_0_[3]\,
       I2 => clamped_val10_in,
       O => \clamped_val[5]_i_1_n_0\
     );
@@ -649,7 +663,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[2]\,
+      I1 => \d_val_reg_n_0_[4]\,
       I2 => clamped_val10_in,
       O => \clamped_val[6]_i_1_n_0\
     );
@@ -659,7 +673,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[3]\,
+      I1 => \d_val_reg_n_0_[5]\,
       I2 => clamped_val10_in,
       O => \clamped_val[7]_i_1_n_0\
     );
@@ -669,7 +683,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[4]\,
+      I1 => \d_val_reg_n_0_[6]\,
       I2 => clamped_val10_in,
       O => \clamped_val[8]_i_1_n_0\
     );
@@ -679,7 +693,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     )
         port map (
       I0 => clamped_val1,
-      I1 => \d_val_reg_n_0_[5]\,
+      I1 => \d_val_reg_n_0_[7]\,
       I2 => clamped_val10_in,
       O => \clamped_val[9]_i_1_n_0\
     );
@@ -802,6 +816,22 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => \clamped_val[23]_i_2_n_0\,
       Q => payload(23)
+    );
+\clamped_val_reg[2]\: unisim.vcomponents.FDCE
+     port map (
+      C => aclk,
+      CE => \clamped_val[23]_i_1_n_0\,
+      CLR => \m_axis_tdata[31]_i_3_n_0\,
+      D => \clamped_val[2]_i_1_n_0\,
+      Q => payload(2)
+    );
+\clamped_val_reg[3]\: unisim.vcomponents.FDCE
+     port map (
+      C => aclk,
+      CE => \clamped_val[23]_i_1_n_0\,
+      CLR => \m_axis_tdata[31]_i_3_n_0\,
+      D => \clamped_val[3]_i_1_n_0\,
+      Q => payload(3)
     );
 \clamped_val_reg[4]\: unisim.vcomponents.FDCE
      port map (
@@ -1393,13 +1423,12 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => p_0_in0,
       O => \i__carry__1_i_1_n_0\
     );
-\i__carry_i_1\: unisim.vcomponents.LUT2
+\i__carry_i_1\: unisim.vcomponents.LUT1
     generic map(
-      INIT => X"E"
+      INIT => X"1"
     )
         port map (
-      I0 => \d_val_reg_n_0_[20]\,
-      I1 => \d_val_reg_n_0_[21]\,
+      I0 => p_0_in0,
       O => \i__carry_i_1_n_0\
     );
 \i__carry_i_2\: unisim.vcomponents.LUT1
@@ -1420,21 +1449,12 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
     );
 \i__carry_i_4\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => \d_val_reg_n_0_[21]\,
-      I1 => \d_val_reg_n_0_[20]\,
-      O => \i__carry_i_4_n_0\
-    );
-\i__carry_i_5\: unisim.vcomponents.LUT2
-    generic map(
       INIT => X"2"
     )
         port map (
-      I0 => \d_val_reg_n_0_[18]\,
-      I1 => \d_val_reg_n_0_[19]\,
-      O => \i__carry_i_5_n_0\
+      I0 => \d_val_reg_n_0_[20]\,
+      I1 => \d_val_reg_n_0_[21]\,
+      O => \i__carry_i_4_n_0\
     );
 \m_axis_tdata[0]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -1453,7 +1473,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(6),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[2]\,
+      I3 => \d_val_reg_n_0_[4]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(10)
     );
@@ -1465,7 +1485,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(7),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[3]\,
+      I3 => \d_val_reg_n_0_[5]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(11)
     );
@@ -1477,7 +1497,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(8),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[4]\,
+      I3 => \d_val_reg_n_0_[6]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(12)
     );
@@ -1489,7 +1509,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(9),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[5]\,
+      I3 => \d_val_reg_n_0_[7]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(13)
     );
@@ -1501,7 +1521,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(10),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[6]\,
+      I3 => \d_val_reg_n_0_[8]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(14)
     );
@@ -1513,7 +1533,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(11),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[7]\,
+      I3 => \d_val_reg_n_0_[9]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(15)
     );
@@ -1525,7 +1545,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(12),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[8]\,
+      I3 => \d_val_reg_n_0_[10]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(16)
     );
@@ -1537,7 +1557,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(13),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[9]\,
+      I3 => \d_val_reg_n_0_[11]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(17)
     );
@@ -1549,7 +1569,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(14),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[10]\,
+      I3 => \d_val_reg_n_0_[12]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(18)
     );
@@ -1561,7 +1581,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(15),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[11]\,
+      I3 => \d_val_reg_n_0_[13]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(19)
     );
@@ -1582,7 +1602,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(16),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[12]\,
+      I3 => \d_val_reg_n_0_[14]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(20)
     );
@@ -1594,7 +1614,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(17),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[13]\,
+      I3 => \d_val_reg_n_0_[15]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(21)
     );
@@ -1606,7 +1626,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(18),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[14]\,
+      I3 => \d_val_reg_n_0_[16]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(22)
     );
@@ -1618,7 +1638,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(19),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[15]\,
+      I3 => \d_val_reg_n_0_[17]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(23)
     );
@@ -1630,7 +1650,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(20),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[16]\,
+      I3 => \d_val_reg_n_0_[18]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(24)
     );
@@ -1642,7 +1662,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(21),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[17]\,
+      I3 => \d_val_reg_n_0_[19]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(25)
     );
@@ -1654,7 +1674,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(22),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[18]\,
+      I3 => \d_val_reg_n_0_[20]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(26)
     );
@@ -1665,7 +1685,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
         port map (
       I0 => payload(23),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
-      I2 => \d_val_reg_n_0_[19]\,
+      I2 => \d_val_reg_n_0_[21]\,
       I3 => clamped_val1,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(27)
@@ -1696,8 +1716,8 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
         port map (
       I0 => \m_axis_tdata[31]_i_4_n_0\,
       I1 => \m_axis_tdata[31]_i_5_n_0\,
-      I2 => \m_axis_tdata[31]_i_6_n_0\,
-      I3 => payload(5),
+      I2 => payload(3),
+      I3 => \m_axis_tdata[31]_i_6_n_0\,
       I4 => \m_axis_tdata[31]_i_7_n_0\,
       O => parity
     );
@@ -1709,31 +1729,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => aresetn,
       O => \m_axis_tdata[31]_i_3_n_0\
     );
-\m_axis_tdata[31]_i_4\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"6996"
-    )
-        port map (
-      I0 => payload(6),
-      I1 => payload(9),
-      I2 => payload(7),
-      I3 => payload(4),
-      O => \m_axis_tdata[31]_i_4_n_0\
-    );
-\m_axis_tdata[31]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"6996966996696996"
-    )
-        port map (
-      I0 => payload(17),
-      I1 => payload(14),
-      I2 => payload(18),
-      I3 => payload(21),
-      I4 => payload(16),
-      I5 => payload(19),
-      O => \m_axis_tdata[31]_i_5_n_0\
-    );
-\m_axis_tdata[31]_i_6\: unisim.vcomponents.LUT6
+\m_axis_tdata[31]_i_4\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"6996966996696996"
     )
@@ -1744,6 +1740,32 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I3 => payload(15),
       I4 => payload(10),
       I5 => payload(13),
+      O => \m_axis_tdata[31]_i_4_n_0\
+    );
+\m_axis_tdata[31]_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"6996966996696996"
+    )
+        port map (
+      I0 => payload(5),
+      I1 => payload(2),
+      I2 => payload(6),
+      I3 => payload(9),
+      I4 => payload(4),
+      I5 => payload(7),
+      O => \m_axis_tdata[31]_i_5_n_0\
+    );
+\m_axis_tdata[31]_i_6\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"6996966996696996"
+    )
+        port map (
+      I0 => payload(17),
+      I1 => payload(14),
+      I2 => payload(18),
+      I3 => payload(21),
+      I4 => payload(16),
+      I5 => payload(19),
       O => \m_axis_tdata[31]_i_6_n_0\
     );
 \m_axis_tdata[31]_i_7\: unisim.vcomponents.LUT6
@@ -1768,7 +1790,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       O => \m_axis_tdata[3]_i_1_n_0\
     );
-\m_axis_tdata[7]_i_1\: unisim.vcomponents.LUT3
+\m_axis_tdata[5]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
@@ -1776,6 +1798,30 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(0),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val10_in,
+      O => m_axis_tdata0_in(5)
+    );
+\m_axis_tdata[6]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"BBBB8B88"
+    )
+        port map (
+      I0 => payload(2),
+      I1 => \FSM_sequential_state_reg_n_0_[1]\,
+      I2 => clamped_val1,
+      I3 => \d_val_reg_n_0_[0]\,
+      I4 => clamped_val10_in,
+      O => m_axis_tdata0_in(6)
+    );
+\m_axis_tdata[7]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"BBBB8B88"
+    )
+        port map (
+      I0 => payload(3),
+      I1 => \FSM_sequential_state_reg_n_0_[1]\,
+      I2 => clamped_val1,
+      I3 => \d_val_reg_n_0_[1]\,
+      I4 => clamped_val10_in,
       O => m_axis_tdata0_in(7)
     );
 \m_axis_tdata[8]_i_1\: unisim.vcomponents.LUT5
@@ -1786,7 +1832,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(4),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[0]\,
+      I3 => \d_val_reg_n_0_[2]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(8)
     );
@@ -1798,7 +1844,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       I0 => payload(5),
       I1 => \FSM_sequential_state_reg_n_0_[1]\,
       I2 => clamped_val1,
-      I3 => \d_val_reg_n_0_[1]\,
+      I3 => \d_val_reg_n_0_[3]\,
       I4 => clamped_val10_in,
       O => m_axis_tdata0_in(9)
     );
@@ -1816,7 +1862,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(10),
-      Q => m_axis_tdata(7)
+      Q => m_axis_tdata(9)
     );
 \m_axis_tdata_reg[11]\: unisim.vcomponents.FDCE
      port map (
@@ -1824,7 +1870,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(11),
-      Q => m_axis_tdata(8)
+      Q => m_axis_tdata(10)
     );
 \m_axis_tdata_reg[12]\: unisim.vcomponents.FDCE
      port map (
@@ -1832,7 +1878,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(12),
-      Q => m_axis_tdata(9)
+      Q => m_axis_tdata(11)
     );
 \m_axis_tdata_reg[13]\: unisim.vcomponents.FDCE
      port map (
@@ -1840,7 +1886,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(13),
-      Q => m_axis_tdata(10)
+      Q => m_axis_tdata(12)
     );
 \m_axis_tdata_reg[14]\: unisim.vcomponents.FDCE
      port map (
@@ -1848,7 +1894,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(14),
-      Q => m_axis_tdata(11)
+      Q => m_axis_tdata(13)
     );
 \m_axis_tdata_reg[15]\: unisim.vcomponents.FDCE
      port map (
@@ -1856,7 +1902,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(15),
-      Q => m_axis_tdata(12)
+      Q => m_axis_tdata(14)
     );
 \m_axis_tdata_reg[16]\: unisim.vcomponents.FDCE
      port map (
@@ -1864,7 +1910,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(16),
-      Q => m_axis_tdata(13)
+      Q => m_axis_tdata(15)
     );
 \m_axis_tdata_reg[17]\: unisim.vcomponents.FDCE
      port map (
@@ -1872,7 +1918,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(17),
-      Q => m_axis_tdata(14)
+      Q => m_axis_tdata(16)
     );
 \m_axis_tdata_reg[18]\: unisim.vcomponents.FDCE
      port map (
@@ -1880,7 +1926,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(18),
-      Q => m_axis_tdata(15)
+      Q => m_axis_tdata(17)
     );
 \m_axis_tdata_reg[19]\: unisim.vcomponents.FDCE
      port map (
@@ -1888,7 +1934,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(19),
-      Q => m_axis_tdata(16)
+      Q => m_axis_tdata(18)
     );
 \m_axis_tdata_reg[1]\: unisim.vcomponents.FDCE
      port map (
@@ -1904,7 +1950,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(20),
-      Q => m_axis_tdata(17)
+      Q => m_axis_tdata(19)
     );
 \m_axis_tdata_reg[21]\: unisim.vcomponents.FDCE
      port map (
@@ -1912,7 +1958,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(21),
-      Q => m_axis_tdata(18)
+      Q => m_axis_tdata(20)
     );
 \m_axis_tdata_reg[22]\: unisim.vcomponents.FDCE
      port map (
@@ -1920,7 +1966,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(22),
-      Q => m_axis_tdata(19)
+      Q => m_axis_tdata(21)
     );
 \m_axis_tdata_reg[23]\: unisim.vcomponents.FDCE
      port map (
@@ -1928,7 +1974,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(23),
-      Q => m_axis_tdata(20)
+      Q => m_axis_tdata(22)
     );
 \m_axis_tdata_reg[24]\: unisim.vcomponents.FDCE
      port map (
@@ -1936,7 +1982,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(24),
-      Q => m_axis_tdata(21)
+      Q => m_axis_tdata(23)
     );
 \m_axis_tdata_reg[25]\: unisim.vcomponents.FDCE
      port map (
@@ -1944,7 +1990,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(25),
-      Q => m_axis_tdata(22)
+      Q => m_axis_tdata(24)
     );
 \m_axis_tdata_reg[26]\: unisim.vcomponents.FDCE
      port map (
@@ -1952,7 +1998,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(26),
-      Q => m_axis_tdata(23)
+      Q => m_axis_tdata(25)
     );
 \m_axis_tdata_reg[27]\: unisim.vcomponents.FDCE
      port map (
@@ -1960,7 +2006,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(27),
-      Q => m_axis_tdata(24)
+      Q => m_axis_tdata(26)
     );
 \m_axis_tdata_reg[28]\: unisim.vcomponents.FDCE
      port map (
@@ -1968,7 +2014,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => payload(24),
-      Q => m_axis_tdata(25)
+      Q => m_axis_tdata(27)
     );
 \m_axis_tdata_reg[29]\: unisim.vcomponents.FDCE
      port map (
@@ -1976,7 +2022,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => payload(25),
-      Q => m_axis_tdata(26)
+      Q => m_axis_tdata(28)
     );
 \m_axis_tdata_reg[2]\: unisim.vcomponents.FDCE
      port map (
@@ -1992,7 +2038,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => payload(26),
-      Q => m_axis_tdata(27)
+      Q => m_axis_tdata(29)
     );
 \m_axis_tdata_reg[31]\: unisim.vcomponents.FDCE
      port map (
@@ -2000,7 +2046,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => parity,
-      Q => m_axis_tdata(28)
+      Q => m_axis_tdata(30)
     );
 \m_axis_tdata_reg[3]\: unisim.vcomponents.FDCE
      port map (
@@ -2010,13 +2056,29 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       D => \m_axis_tdata[3]_i_1_n_0\,
       Q => m_axis_tdata(3)
     );
+\m_axis_tdata_reg[5]\: unisim.vcomponents.FDCE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[31]_i_1_n_0\,
+      CLR => \m_axis_tdata[31]_i_3_n_0\,
+      D => m_axis_tdata0_in(5),
+      Q => m_axis_tdata(4)
+    );
+\m_axis_tdata_reg[6]\: unisim.vcomponents.FDCE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[31]_i_1_n_0\,
+      CLR => \m_axis_tdata[31]_i_3_n_0\,
+      D => m_axis_tdata0_in(6),
+      Q => m_axis_tdata(5)
+    );
 \m_axis_tdata_reg[7]\: unisim.vcomponents.FDCE
      port map (
       C => aclk,
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(7),
-      Q => m_axis_tdata(4)
+      Q => m_axis_tdata(6)
     );
 \m_axis_tdata_reg[8]\: unisim.vcomponents.FDCE
      port map (
@@ -2024,7 +2086,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(8),
-      Q => m_axis_tdata(5)
+      Q => m_axis_tdata(7)
     );
 \m_axis_tdata_reg[9]\: unisim.vcomponents.FDCE
      port map (
@@ -2032,7 +2094,7 @@ clamped_val1_carry_i_6: unisim.vcomponents.LUT2
       CE => \m_axis_tdata[31]_i_1_n_0\,
       CLR => \m_axis_tdata[31]_i_3_n_0\,
       D => m_axis_tdata0_in(9),
-      Q => m_axis_tdata(6)
+      Q => m_axis_tdata(8)
     );
 \m_axis_tid_reg[0]\: unisim.vcomponents.FDCE
      port map (
@@ -2595,12 +2657,9 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   attribute X_INTERFACE_INFO of s_axis_tdata : signal is "xilinx.com:interface:axis:1.0 s_axis TDATA";
   attribute X_INTERFACE_INFO of s_axis_tid : signal is "xilinx.com:interface:axis:1.0 s_axis TID";
 begin
-  m_axis_tdata(31 downto 8) <= \^m_axis_tdata\(31 downto 8);
-  m_axis_tdata(7) <= \^m_axis_tdata\(6);
-  m_axis_tdata(6) <= \^m_axis_tdata\(6);
-  m_axis_tdata(5) <= \^m_axis_tdata\(6);
-  m_axis_tdata(4) <= \^m_axis_tdata\(6);
-  m_axis_tdata(3 downto 0) <= \^m_axis_tdata\(3 downto 0);
+  m_axis_tdata(31 downto 6) <= \^m_axis_tdata\(31 downto 6);
+  m_axis_tdata(5) <= \^m_axis_tdata\(4);
+  m_axis_tdata(4 downto 0) <= \^m_axis_tdata\(4 downto 0);
   m_axis_tid(2) <= \<const0>\;
   m_axis_tid(1) <= \<const0>\;
   m_axis_tid(0) <= \^m_axis_tid\(0);
@@ -2617,9 +2676,8 @@ inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_axis_dlms_beamformer
      port map (
       aclk => aclk,
       aresetn => aresetn,
-      m_axis_tdata(28 downto 5) => \^m_axis_tdata\(31 downto 8),
-      m_axis_tdata(4) => \^m_axis_tdata\(6),
-      m_axis_tdata(3 downto 0) => \^m_axis_tdata\(3 downto 0),
+      m_axis_tdata(30 downto 5) => \^m_axis_tdata\(31 downto 6),
+      m_axis_tdata(4 downto 0) => \^m_axis_tdata\(4 downto 0),
       m_axis_tid(0) => \^m_axis_tid\(0),
       m_axis_tready => m_axis_tready,
       m_axis_tvalid => m_axis_tvalid,

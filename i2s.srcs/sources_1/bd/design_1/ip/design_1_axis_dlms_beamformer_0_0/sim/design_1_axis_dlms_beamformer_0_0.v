@@ -93,7 +93,7 @@ output wire m_axis_tvalid;
 input wire m_axis_tready;
 
   axis_dlms_beamformer #(
-    .GAIN_SHIFT(4),
+    .GAIN_SHIFT(2),
     .MU_SHIFT(25)
   ) inst (
     .aclk(aclk),

@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "axis_dlms_beamformer,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_axis_dlms_beamformer_0_0,axis_dlms_beamformer,{}" *)
-(* CORE_GENERATION_INFO = "design_1_axis_dlms_beamformer_0_0,axis_dlms_beamformer,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=axis_dlms_beamformer,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,GAIN_SHIFT=4,MU_SHIFT=25}" *)
+(* CORE_GENERATION_INFO = "design_1_axis_dlms_beamformer_0_0,axis_dlms_beamformer,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=axis_dlms_beamformer,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,GAIN_SHIFT=2,MU_SHIFT=25}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_axis_dlms_beamformer_0_0 (
@@ -94,7 +94,7 @@ output wire m_axis_tvalid;
 input wire m_axis_tready;
 
   axis_dlms_beamformer #(
-    .GAIN_SHIFT(4),
+    .GAIN_SHIFT(2),
     .MU_SHIFT(25)
   ) inst (
     .aclk(aclk),

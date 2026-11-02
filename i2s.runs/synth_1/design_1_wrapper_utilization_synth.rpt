@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Sun Nov  1 22:10:40 2026
+| Date         : Mon Nov  2 13:20:07 2026
 | Host         : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -164,6 +164,7 @@ Table of Contents
 | design_1_i2s_receiver_0_0         |    1 |
 | design_1_clk_wiz_0_0              |    1 |
 | design_1_axis_tlast_gen_0_0       |    1 |
+| design_1_axis_noise_gate_0_0      |    1 |
 | design_1_axis_dlms_beamformer_0_0 |    1 |
 | design_1_axi_smc_0                |    1 |
 | design_1_axi_dma_0_0              |    1 |

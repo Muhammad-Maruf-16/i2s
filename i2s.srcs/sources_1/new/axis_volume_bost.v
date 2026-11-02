@@ -25,7 +25,7 @@ module axis_volume_boost #(
     // SHIFT = 2 -> Naik 4x (+12 dB)
     // SHIFT = 3 -> Naik 8x (+18 dB) -> Sangat sensitif ala HP!
     // SHIFT = 4 -> Naik 16x (+24 dB)
-    parameter SHIFT = 4
+    parameter SHIFT = 2
 )(
     input  wire        aclk,
     input  wire        aresetn,

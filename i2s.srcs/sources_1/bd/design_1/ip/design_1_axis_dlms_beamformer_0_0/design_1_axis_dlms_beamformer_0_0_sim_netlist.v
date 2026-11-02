@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Sun Nov  1 22:02:20 2026
+// Date        : Mon Nov  2 13:19:30 2026
 // Host        : maruf-ThinkPad-T470p running 64-bit Ubuntu 24.04.3 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_axis_dlms_beamformer_0_0/design_1_axis_dlms_beamformer_0_0_sim_netlist.v
@@ -49,12 +49,9 @@ module design_1_axis_dlms_beamformer_0_0
   wire [2:0]s_axis_tid;
   wire s_axis_tvalid;
 
-  assign m_axis_tdata[31:8] = \^m_axis_tdata [31:8];
-  assign m_axis_tdata[7] = \^m_axis_tdata [6];
-  assign m_axis_tdata[6] = \^m_axis_tdata [6];
-  assign m_axis_tdata[5] = \^m_axis_tdata [6];
-  assign m_axis_tdata[4] = \^m_axis_tdata [6];
-  assign m_axis_tdata[3:0] = \^m_axis_tdata [3:0];
+  assign m_axis_tdata[31:6] = \^m_axis_tdata [31:6];
+  assign m_axis_tdata[5] = \^m_axis_tdata [4];
+  assign m_axis_tdata[4:0] = \^m_axis_tdata [4:0];
   assign m_axis_tid[2] = \<const0> ;
   assign m_axis_tid[1] = \<const0> ;
   assign m_axis_tid[0] = \^m_axis_tid [0];
@@ -66,7 +63,7 @@ module design_1_axis_dlms_beamformer_0_0
   design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer inst
        (.aclk(aclk),
         .aresetn(aresetn),
-        .m_axis_tdata({\^m_axis_tdata [31:8],\^m_axis_tdata [6],\^m_axis_tdata [3:0]}),
+        .m_axis_tdata({\^m_axis_tdata [31:6],\^m_axis_tdata [4:0]}),
         .m_axis_tid(\^m_axis_tid ),
         .m_axis_tready(m_axis_tready),
         .m_axis_tvalid(m_axis_tvalid),
@@ -86,7 +83,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     s_axis_tid,
     s_axis_tvalid,
     aresetn);
-  output [28:0]m_axis_tdata;
+  output [30:0]m_axis_tdata;
   output [0:0]m_axis_tid;
   output m_axis_tvalid;
   input m_axis_tready;
@@ -116,7 +113,6 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
   wire clamped_val1_carry_i_3_n_0;
   wire clamped_val1_carry_i_4_n_0;
   wire clamped_val1_carry_i_5_n_0;
-  wire clamped_val1_carry_i_6_n_0;
   wire clamped_val1_carry_n_0;
   wire clamped_val1_carry_n_1;
   wire clamped_val1_carry_n_2;
@@ -144,6 +140,8 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
   wire \clamped_val[22]_i_1_n_0 ;
   wire \clamped_val[23]_i_1_n_0 ;
   wire \clamped_val[23]_i_2_n_0 ;
+  wire \clamped_val[2]_i_1_n_0 ;
+  wire \clamped_val[3]_i_1_n_0 ;
   wire \clamped_val[4]_i_1_n_0 ;
   wire \clamped_val[5]_i_1_n_0 ;
   wire \clamped_val[6]_i_1_n_0 ;
@@ -230,8 +228,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
   wire i__carry_i_2_n_0;
   wire i__carry_i_3_n_0;
   wire i__carry_i_4_n_0;
-  wire i__carry_i_5_n_0;
-  wire [28:0]m_axis_tdata;
+  wire [30:0]m_axis_tdata;
   wire [27:1]m_axis_tdata0_in;
   wire \m_axis_tdata[0]_i_1_n_0 ;
   wire \m_axis_tdata[2]_i_1_n_0 ;
@@ -308,7 +305,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
         .CYINIT(1'b0),
         .DI({clamped_val1_carry_i_1_n_0,clamped_val1_carry_i_2_n_0,clamped_val1_carry_i_3_n_0,clamped_val1_carry_i_4_n_0}),
         .O(NLW_clamped_val1_carry_O_UNCONNECTED[3:0]),
-        .S({p_0_in0,p_0_in0,clamped_val1_carry_i_5_n_0,clamped_val1_carry_i_6_n_0}));
+        .S({p_0_in0,p_0_in0,p_0_in0,clamped_val1_carry_i_5_n_0}));
   CARRY4 clamped_val1_carry__0
        (.CI(clamped_val1_carry_n_0),
         .CO({clamped_val1_carry__0_n_0,clamped_val1_carry__0_n_1,clamped_val1_carry__0_n_2,clamped_val1_carry__0_n_3}),
@@ -353,36 +350,29 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     clamped_val1_carry_i_2
        (.I0(p_0_in0),
         .O(clamped_val1_carry_i_2_n_0));
-  LUT2 #(
-    .INIT(4'h7)) 
+  LUT1 #(
+    .INIT(2'h1)) 
     clamped_val1_carry_i_3
-       (.I0(\d_val_reg_n_0_[20] ),
-        .I1(\d_val_reg_n_0_[21] ),
+       (.I0(p_0_in0),
         .O(clamped_val1_carry_i_3_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     clamped_val1_carry_i_4
-       (.I0(\d_val_reg_n_0_[19] ),
+       (.I0(\d_val_reg_n_0_[21] ),
         .O(clamped_val1_carry_i_4_n_0));
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h2)) 
     clamped_val1_carry_i_5
        (.I0(\d_val_reg_n_0_[21] ),
         .I1(\d_val_reg_n_0_[20] ),
         .O(clamped_val1_carry_i_5_n_0));
-  LUT2 #(
-    .INIT(4'h2)) 
-    clamped_val1_carry_i_6
-       (.I0(\d_val_reg_n_0_[19] ),
-        .I1(\d_val_reg_n_0_[18] ),
-        .O(clamped_val1_carry_i_6_n_0));
   CARRY4 \clamped_val1_inferred__0/i__carry 
        (.CI(1'b0),
         .CO({\clamped_val1_inferred__0/i__carry_n_0 ,\clamped_val1_inferred__0/i__carry_n_1 ,\clamped_val1_inferred__0/i__carry_n_2 ,\clamped_val1_inferred__0/i__carry_n_3 }),
         .CYINIT(1'b0),
-        .DI({p_0_in0,p_0_in0,i__carry_i_1_n_0,\d_val_reg_n_0_[19] }),
+        .DI({p_0_in0,p_0_in0,p_0_in0,\d_val_reg_n_0_[21] }),
         .O(\NLW_clamped_val1_inferred__0/i__carry_O_UNCONNECTED [3:0]),
-        .S({i__carry_i_2_n_0,i__carry_i_3_n_0,i__carry_i_4_n_0,i__carry_i_5_n_0}));
+        .S({i__carry_i_1_n_0,i__carry_i_2_n_0,i__carry_i_3_n_0,i__carry_i_4_n_0}));
   CARRY4 \clamped_val1_inferred__0/i__carry__0 
        (.CI(\clamped_val1_inferred__0/i__carry_n_0 ),
         .CO({\clamped_val1_inferred__0/i__carry__0_n_0 ,\clamped_val1_inferred__0/i__carry__0_n_1 ,\clamped_val1_inferred__0/i__carry__0_n_2 ,\clamped_val1_inferred__0/i__carry__0_n_3 }),
@@ -397,12 +387,12 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(\NLW_clamped_val1_inferred__0/i__carry__1_O_UNCONNECTED [3:0]),
         .S({1'b0,1'b0,1'b0,i__carry__1_i_1_n_0}));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hF4)) 
     \clamped_val[10]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[6] ),
+        .I1(\d_val_reg_n_0_[8] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[10]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
@@ -410,7 +400,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[11]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[7] ),
+        .I1(\d_val_reg_n_0_[9] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[11]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
@@ -418,31 +408,31 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[12]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[8] ),
+        .I1(\d_val_reg_n_0_[10] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hF4)) 
     \clamped_val[13]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[9] ),
+        .I1(\d_val_reg_n_0_[11] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hF4)) 
     \clamped_val[14]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[10] ),
+        .I1(\d_val_reg_n_0_[12] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'hF4)) 
     \clamped_val[15]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[11] ),
+        .I1(\d_val_reg_n_0_[13] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[15]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
@@ -450,7 +440,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[16]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[12] ),
+        .I1(\d_val_reg_n_0_[14] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[16]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair7" *) 
@@ -458,7 +448,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[17]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[13] ),
+        .I1(\d_val_reg_n_0_[15] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[17]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
@@ -466,7 +456,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[18]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[14] ),
+        .I1(\d_val_reg_n_0_[16] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[18]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
@@ -474,7 +464,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[19]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[15] ),
+        .I1(\d_val_reg_n_0_[17] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[19]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
@@ -482,7 +472,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[20]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[16] ),
+        .I1(\d_val_reg_n_0_[18] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[20]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
@@ -490,7 +480,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[21]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[17] ),
+        .I1(\d_val_reg_n_0_[19] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[21]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
@@ -498,7 +488,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[22]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[18] ),
+        .I1(\d_val_reg_n_0_[20] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[22]_i_1_n_0 ));
   LUT3 #(
@@ -512,16 +502,32 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
   LUT3 #(
     .INIT(8'h0E)) 
     \clamped_val[23]_i_2 
-       (.I0(\d_val_reg_n_0_[19] ),
+       (.I0(\d_val_reg_n_0_[21] ),
         .I1(clamped_val1),
         .I2(clamped_val10_in),
         .O(\clamped_val[23]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT3 #(
+    .INIT(8'hF4)) 
+    \clamped_val[2]_i_1 
+       (.I0(clamped_val1),
+        .I1(\d_val_reg_n_0_[0] ),
+        .I2(clamped_val10_in),
+        .O(\clamped_val[2]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT3 #(
+    .INIT(8'hF4)) 
+    \clamped_val[3]_i_1 
+       (.I0(clamped_val1),
+        .I1(\d_val_reg_n_0_[1] ),
+        .I2(clamped_val10_in),
+        .O(\clamped_val[3]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'hF4)) 
     \clamped_val[4]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[0] ),
+        .I1(\d_val_reg_n_0_[2] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[4]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
@@ -529,7 +535,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[5]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[1] ),
+        .I1(\d_val_reg_n_0_[3] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[5]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
@@ -537,7 +543,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[6]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[2] ),
+        .I1(\d_val_reg_n_0_[4] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[6]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
@@ -545,23 +551,23 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     .INIT(8'hF4)) 
     \clamped_val[7]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[3] ),
+        .I1(\d_val_reg_n_0_[5] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hF4)) 
     \clamped_val[8]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[4] ),
+        .I1(\d_val_reg_n_0_[6] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hF4)) 
     \clamped_val[9]_i_1 
        (.I0(clamped_val1),
-        .I1(\d_val_reg_n_0_[5] ),
+        .I1(\d_val_reg_n_0_[7] ),
         .I2(clamped_val10_in),
         .O(\clamped_val[9]_i_1_n_0 ));
   FDCE \clamped_val_reg[0] 
@@ -654,6 +660,18 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(\clamped_val[23]_i_2_n_0 ),
         .Q(payload[23]));
+  FDCE \clamped_val_reg[2] 
+       (.C(aclk),
+        .CE(\clamped_val[23]_i_1_n_0 ),
+        .CLR(\m_axis_tdata[31]_i_3_n_0 ),
+        .D(\clamped_val[2]_i_1_n_0 ),
+        .Q(payload[2]));
+  FDCE \clamped_val_reg[3] 
+       (.C(aclk),
+        .CE(\clamped_val[23]_i_1_n_0 ),
+        .CLR(\m_axis_tdata[31]_i_3_n_0 ),
+        .D(\clamped_val[3]_i_1_n_0 ),
+        .Q(payload[3]));
   FDCE \clamped_val_reg[4] 
        (.C(aclk),
         .CE(\clamped_val[23]_i_1_n_0 ),
@@ -1046,11 +1064,10 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     i__carry__1_i_1
        (.I0(p_0_in0),
         .O(i__carry__1_i_1_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
+  LUT1 #(
+    .INIT(2'h1)) 
     i__carry_i_1
-       (.I0(\d_val_reg_n_0_[20] ),
-        .I1(\d_val_reg_n_0_[21] ),
+       (.I0(p_0_in0),
         .O(i__carry_i_1_n_0));
   LUT1 #(
     .INIT(2'h1)) 
@@ -1063,18 +1080,12 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(p_0_in0),
         .O(i__carry_i_3_n_0));
   LUT2 #(
-    .INIT(4'h1)) 
-    i__carry_i_4
-       (.I0(\d_val_reg_n_0_[21] ),
-        .I1(\d_val_reg_n_0_[20] ),
-        .O(i__carry_i_4_n_0));
-  LUT2 #(
     .INIT(4'h2)) 
-    i__carry_i_5
-       (.I0(\d_val_reg_n_0_[18] ),
-        .I1(\d_val_reg_n_0_[19] ),
-        .O(i__carry_i_5_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+    i__carry_i_4
+       (.I0(\d_val_reg_n_0_[20] ),
+        .I1(\d_val_reg_n_0_[21] ),
+        .O(i__carry_i_4_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[0]_i_1 
@@ -1087,7 +1098,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[6]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[2] ),
+        .I3(\d_val_reg_n_0_[4] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[10]));
   LUT5 #(
@@ -1096,7 +1107,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[7]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[3] ),
+        .I3(\d_val_reg_n_0_[5] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[11]));
   LUT5 #(
@@ -1105,7 +1116,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[8]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[4] ),
+        .I3(\d_val_reg_n_0_[6] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[12]));
   LUT5 #(
@@ -1114,7 +1125,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[9]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[5] ),
+        .I3(\d_val_reg_n_0_[7] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[13]));
   LUT5 #(
@@ -1123,7 +1134,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[10]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[6] ),
+        .I3(\d_val_reg_n_0_[8] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[14]));
   LUT5 #(
@@ -1132,7 +1143,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[11]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[7] ),
+        .I3(\d_val_reg_n_0_[9] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[15]));
   LUT5 #(
@@ -1141,7 +1152,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[12]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[8] ),
+        .I3(\d_val_reg_n_0_[10] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[16]));
   LUT5 #(
@@ -1150,7 +1161,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[13]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[9] ),
+        .I3(\d_val_reg_n_0_[11] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[17]));
   LUT5 #(
@@ -1159,7 +1170,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[14]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[10] ),
+        .I3(\d_val_reg_n_0_[12] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[18]));
   LUT5 #(
@@ -1168,7 +1179,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[15]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[11] ),
+        .I3(\d_val_reg_n_0_[13] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[19]));
   LUT2 #(
@@ -1183,7 +1194,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[16]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[12] ),
+        .I3(\d_val_reg_n_0_[14] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[20]));
   LUT5 #(
@@ -1192,7 +1203,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[17]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[13] ),
+        .I3(\d_val_reg_n_0_[15] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[21]));
   LUT5 #(
@@ -1201,7 +1212,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[18]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[14] ),
+        .I3(\d_val_reg_n_0_[16] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[22]));
   LUT5 #(
@@ -1210,7 +1221,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[19]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[15] ),
+        .I3(\d_val_reg_n_0_[17] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[23]));
   LUT5 #(
@@ -1219,7 +1230,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[20]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[16] ),
+        .I3(\d_val_reg_n_0_[18] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[24]));
   LUT5 #(
@@ -1228,7 +1239,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[21]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[17] ),
+        .I3(\d_val_reg_n_0_[19] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[25]));
   LUT5 #(
@@ -1237,7 +1248,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[22]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[18] ),
+        .I3(\d_val_reg_n_0_[20] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[26]));
   LUT5 #(
@@ -1245,11 +1256,11 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     \m_axis_tdata[27]_i_1 
        (.I0(payload[23]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
-        .I2(\d_val_reg_n_0_[19] ),
+        .I2(\d_val_reg_n_0_[21] ),
         .I3(clamped_val1),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[27]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[2]_i_1 
@@ -1268,8 +1279,8 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     \m_axis_tdata[31]_i_2 
        (.I0(\m_axis_tdata[31]_i_4_n_0 ),
         .I1(\m_axis_tdata[31]_i_5_n_0 ),
-        .I2(\m_axis_tdata[31]_i_6_n_0 ),
-        .I3(payload[5]),
+        .I2(payload[3]),
+        .I3(\m_axis_tdata[31]_i_6_n_0 ),
         .I4(\m_axis_tdata[31]_i_7_n_0 ),
         .O(parity));
   LUT1 #(
@@ -1277,33 +1288,35 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
     \m_axis_tdata[31]_i_3 
        (.I0(aresetn),
         .O(\m_axis_tdata[31]_i_3_n_0 ));
-  LUT4 #(
-    .INIT(16'h6996)) 
+  LUT6 #(
+    .INIT(64'h6996966996696996)) 
     \m_axis_tdata[31]_i_4 
-       (.I0(payload[6]),
-        .I1(payload[9]),
-        .I2(payload[7]),
-        .I3(payload[4]),
-        .O(\m_axis_tdata[31]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h6996966996696996)) 
-    \m_axis_tdata[31]_i_5 
-       (.I0(payload[17]),
-        .I1(payload[14]),
-        .I2(payload[18]),
-        .I3(payload[21]),
-        .I4(payload[16]),
-        .I5(payload[19]),
-        .O(\m_axis_tdata[31]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h6996966996696996)) 
-    \m_axis_tdata[31]_i_6 
        (.I0(payload[11]),
         .I1(payload[8]),
         .I2(payload[12]),
         .I3(payload[15]),
         .I4(payload[10]),
         .I5(payload[13]),
+        .O(\m_axis_tdata[31]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h6996966996696996)) 
+    \m_axis_tdata[31]_i_5 
+       (.I0(payload[5]),
+        .I1(payload[2]),
+        .I2(payload[6]),
+        .I3(payload[9]),
+        .I4(payload[4]),
+        .I5(payload[7]),
+        .O(\m_axis_tdata[31]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'h6996966996696996)) 
+    \m_axis_tdata[31]_i_6 
+       (.I0(payload[17]),
+        .I1(payload[14]),
+        .I2(payload[18]),
+        .I3(payload[21]),
+        .I4(payload[16]),
+        .I5(payload[19]),
         .O(\m_axis_tdata[31]_i_6_n_0 ));
   LUT6 #(
     .INIT(64'h6996966996696996)) 
@@ -1315,20 +1328,38 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
         .I4(payload[22]),
         .I5(payload[25]),
         .O(\m_axis_tdata[31]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[3]_i_1 
        (.I0(preamble_reg[3]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .O(\m_axis_tdata[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'hB8)) 
-    \m_axis_tdata[7]_i_1 
+    \m_axis_tdata[5]_i_1 
        (.I0(payload[0]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val10_in),
+        .O(m_axis_tdata0_in[5]));
+  LUT5 #(
+    .INIT(32'hBBBB8B88)) 
+    \m_axis_tdata[6]_i_1 
+       (.I0(payload[2]),
+        .I1(\FSM_sequential_state_reg_n_0_[1] ),
+        .I2(clamped_val1),
+        .I3(\d_val_reg_n_0_[0] ),
+        .I4(clamped_val10_in),
+        .O(m_axis_tdata0_in[6]));
+  LUT5 #(
+    .INIT(32'hBBBB8B88)) 
+    \m_axis_tdata[7]_i_1 
+       (.I0(payload[3]),
+        .I1(\FSM_sequential_state_reg_n_0_[1] ),
+        .I2(clamped_val1),
+        .I3(\d_val_reg_n_0_[1] ),
+        .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[7]));
   LUT5 #(
     .INIT(32'hBBBB8B88)) 
@@ -1336,7 +1367,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[4]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[0] ),
+        .I3(\d_val_reg_n_0_[2] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[8]));
   LUT5 #(
@@ -1345,7 +1376,7 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
        (.I0(payload[5]),
         .I1(\FSM_sequential_state_reg_n_0_[1] ),
         .I2(clamped_val1),
-        .I3(\d_val_reg_n_0_[1] ),
+        .I3(\d_val_reg_n_0_[3] ),
         .I4(clamped_val10_in),
         .O(m_axis_tdata0_in[9]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
@@ -1361,70 +1392,70 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[10]),
-        .Q(m_axis_tdata[7]));
+        .Q(m_axis_tdata[9]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[11] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[11]),
-        .Q(m_axis_tdata[8]));
+        .Q(m_axis_tdata[10]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[12] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[12]),
-        .Q(m_axis_tdata[9]));
+        .Q(m_axis_tdata[11]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[13] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[13]),
-        .Q(m_axis_tdata[10]));
+        .Q(m_axis_tdata[12]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[14] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[14]),
-        .Q(m_axis_tdata[11]));
+        .Q(m_axis_tdata[13]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[15] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[15]),
-        .Q(m_axis_tdata[12]));
+        .Q(m_axis_tdata[14]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[16] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[16]),
-        .Q(m_axis_tdata[13]));
+        .Q(m_axis_tdata[15]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[17] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[17]),
-        .Q(m_axis_tdata[14]));
+        .Q(m_axis_tdata[16]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[18] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[18]),
-        .Q(m_axis_tdata[15]));
+        .Q(m_axis_tdata[17]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[19] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[19]),
-        .Q(m_axis_tdata[16]));
+        .Q(m_axis_tdata[18]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[1] 
        (.C(aclk),
@@ -1438,70 +1469,70 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[20]),
-        .Q(m_axis_tdata[17]));
+        .Q(m_axis_tdata[19]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[21] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[21]),
-        .Q(m_axis_tdata[18]));
+        .Q(m_axis_tdata[20]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[22] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[22]),
-        .Q(m_axis_tdata[19]));
+        .Q(m_axis_tdata[21]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[23] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[23]),
-        .Q(m_axis_tdata[20]));
+        .Q(m_axis_tdata[22]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[24] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[24]),
-        .Q(m_axis_tdata[21]));
+        .Q(m_axis_tdata[23]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[25] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[25]),
-        .Q(m_axis_tdata[22]));
+        .Q(m_axis_tdata[24]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[26] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[26]),
-        .Q(m_axis_tdata[23]));
+        .Q(m_axis_tdata[25]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[27] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[27]),
-        .Q(m_axis_tdata[24]));
+        .Q(m_axis_tdata[26]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[28] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(payload[24]),
-        .Q(m_axis_tdata[25]));
+        .Q(m_axis_tdata[27]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[29] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(payload[25]),
-        .Q(m_axis_tdata[26]));
+        .Q(m_axis_tdata[28]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[2] 
        (.C(aclk),
@@ -1515,14 +1546,14 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(payload[26]),
-        .Q(m_axis_tdata[27]));
+        .Q(m_axis_tdata[29]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[31] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(parity),
-        .Q(m_axis_tdata[28]));
+        .Q(m_axis_tdata[30]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[3] 
        (.C(aclk),
@@ -1531,26 +1562,40 @@ module design_1_axis_dlms_beamformer_0_0_axis_dlms_beamformer
         .D(\m_axis_tdata[3]_i_1_n_0 ),
         .Q(m_axis_tdata[3]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
+  FDCE \m_axis_tdata_reg[5] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[31]_i_1_n_0 ),
+        .CLR(\m_axis_tdata[31]_i_3_n_0 ),
+        .D(m_axis_tdata0_in[5]),
+        .Q(m_axis_tdata[4]));
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
+  FDCE \m_axis_tdata_reg[6] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[31]_i_1_n_0 ),
+        .CLR(\m_axis_tdata[31]_i_3_n_0 ),
+        .D(m_axis_tdata0_in[6]),
+        .Q(m_axis_tdata[5]));
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[7] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[7]),
-        .Q(m_axis_tdata[4]));
+        .Q(m_axis_tdata[6]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[8] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[8]),
-        .Q(m_axis_tdata[5]));
+        .Q(m_axis_tdata[7]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) 
   FDCE \m_axis_tdata_reg[9] 
        (.C(aclk),
         .CE(\m_axis_tdata[31]_i_1_n_0 ),
         .CLR(\m_axis_tdata[31]_i_3_n_0 ),
         .D(m_axis_tdata0_in[9]),
-        .Q(m_axis_tdata[6]));
+        .Q(m_axis_tdata[8]));
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TID" *) 
   FDCE \m_axis_tid_reg[0] 
        (.C(aclk),

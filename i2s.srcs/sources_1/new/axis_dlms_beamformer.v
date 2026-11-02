@@ -10,7 +10,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module axis_dlms_beamformer #(
-    parameter GAIN_SHIFT = 5,       // Boost 4x (+12 dB)
+    parameter GAIN_SHIFT = 2,       // Boost 4x (+12 dB)
     parameter MU_SHIFT   = 25       // Step-size mu = 2^(-25) untuk kestabilan adaptif
 )(
     (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclk, ASSOCIATED_BUSIF s_axis:m_axis, ASSOCIATED_RESET aresetn, FREQ_HZ 50000000" *)
@@ -70,7 +70,7 @@ module axis_dlms_beamformer #(
     reg signed [47:0] filter_acc;
     reg signed [23:0] y_val;
     reg signed [23:0] clean_val;
-    reg signed [31:0] boosted_val;
+    reg signed [39:0] boosted_val;
     reg signed [23:0] clamped_val;
     
     
@@ -173,26 +173,17 @@ module axis_dlms_beamformer #(
                     end
                     e_d1 <= clean_val;
 
-                    // Digital Volume Boost dengan Anti-Clipping Limiter
-//                    boosted_val = {{8{clean_val[23]}}, clean_val} <<< GAIN_SHIFT;
-                    
-                     // Lebarkan ke 40-bit agar aman saat di-shift tinggi
-                    wire signed [39:0] boosted = {{16{audio_selected[23]}}, audio_selected} <<< GAIN_SHIFT;
-                    wire [23:0] clamped_val = (boosted > 40'sd8388607)  ? 24'sd8388607 :
-                                          (boosted < -40'sd8388608) ? -24'sd8388608 :
-                                          boosted[23:0];
-
-//                    if (boosted_val > 32'sd8388607)
-//                        clamped_val = 24'sd8388607;
-//                    else if (boosted_val < -32'sd8388608)
-//                        clamped_val = -24'sd8388608;
-//                    else
-//                        clamped_val = boosted_val[23:0];
+                    // Digital Volume Boost (wadah 40-bit aman) dengan Anti-Clipping Limiter
+                    boosted_val = {{16{clean_val[23]}}, clean_val} <<< GAIN_SHIFT;
+                    if (boosted_val > 40'sd8388607)
+                        clamped_val = 24'sd8388607;
+                    else if (boosted_val < -40'sd8388608)
+                        clamped_val = -24'sd8388608;
+                    else
+                        clamped_val = boosted_val[23:0];
 
                     // Kirim ke Channel 0 (Left) dengan format AES3 yang sah
                     m_axis_tdata  <= {parity, vuc_reg, clamped_val, preamble_reg};
-//                    m_axis_tdata  <= {parity, vuc_reg, clamped_val, 4'b0010};
-
                     m_axis_tid    <= 3'd0;
                     m_axis_tvalid <= 1'b1;
                     state         <= SEND_CH0;
@@ -201,10 +192,7 @@ module axis_dlms_beamformer #(
                 SEND_CH0: begin
                     if (m_axis_tready) begin
                         // Kirim ke Channel 1 (Right) agar stereo seimbang
-//                        m_axis_tdata  <= {parity, vuc_reg, clamped_val, preamble_reg};
-//                        m_axis_tdata  <= {parity, vuc_reg, clamped_val, 4'b0010};
-                         m_axis_tdata  <= {1'b0, 3'd0, 24'd0, 4'b0010};
-                         
+                        m_axis_tdata  <= {parity, vuc_reg, clamped_val, 4'b0010};
                         m_axis_tid    <= 3'd1;
                         m_axis_tvalid <= 1'b1;
                         state         <= SEND_CH1;
