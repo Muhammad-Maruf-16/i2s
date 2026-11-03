@@ -22,26 +22,48 @@ module axis_noise_gate #(
     // =========================================================================
     // 1. AXI4-Lite Slave Control Interface (dari ARM Zynq CPU)
     // =========================================================================
+    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 6, READ_WRITE_MODE READ_WRITE" *)
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi AWADDR" *)
     input  wire [C_S_AXI_ADDR_WIDTH-1:0] s_axi_awaddr,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi AWPROT" *)
+    input  wire [2:0]                    s_axi_awprot,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi AWVALID" *)
     input  wire                          s_axi_awvalid,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi AWREADY" *)
     output reg                           s_axi_awready,
 
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi WDATA" *)
     input  wire [C_S_AXI_DATA_WIDTH-1:0] s_axi_wdata,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi WSTRB" *)
     input  wire [3:0]                    s_axi_wstrb,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi WVALID" *)
     input  wire                          s_axi_wvalid,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi WREADY" *)
     output reg                           s_axi_wready,
 
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi BRESP" *)
     output reg  [1:0]                    s_axi_bresp,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi BVALID" *)
     output reg                           s_axi_bvalid,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi BREADY" *)
     input  wire                          s_axi_bready,
 
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi ARADDR" *)
     input  wire [C_S_AXI_ADDR_WIDTH-1:0] s_axi_araddr,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi ARPROT" *)
+    input  wire [2:0]                    s_axi_arprot,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi ARVALID" *)
     input  wire                          s_axi_arvalid,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi ARREADY" *)
     output reg                           s_axi_arready,
 
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi RDATA" *)
     output reg  [C_S_AXI_DATA_WIDTH-1:0] s_axi_rdata,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi RRESP" *)
     output reg  [1:0]                    s_axi_rresp,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi RVALID" *)
     output reg                           s_axi_rvalid,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi RREADY" *)
     input  wire                          s_axi_rready,
 
     // =========================================================================
@@ -80,12 +102,18 @@ module axis_noise_gate #(
     reg [15:0] reg_hold_samples;  // Waktu tahan (default 2400 ~ 50 ms)
     reg [8:0]  reg_attack_step;   // Kecepatan buka VCA (default 32)
     reg [8:0]  reg_release_step;  // Kecepatan tutup VCA (default 2)
+    reg [15:0] reg_mic_gain;      // Digital Mic Preamp Gain (Q8: 256 = 1.0x / 0 dB, 512 = 2.0x / +6 dB, dll)
 
     // Register penerimaan sampel
     reg signed [23:0] audio_in;
     reg [3:0]         preamble_reg;
     reg [2:0]         vuc_reg;
     reg               sample_received;
+
+    // Mic Gain Scaler & Limiter
+    wire signed [23:0] raw_sample        = s_axis_tdata[27:4];
+    wire signed [39:0] mic_boost_mult    = raw_sample * $signed({1'b0, reg_mic_gain});
+    wire signed [31:0] mic_boost_scaled  = mic_boost_mult[31:8];
 
     // Envelope Follower & Detektor Level
     reg [23:0]        envelope;
@@ -135,6 +163,7 @@ module axis_noise_gate #(
             reg_hold_samples <= 16'd2400;
             reg_attack_step  <= 9'd32;
             reg_release_step <= 9'd2;
+            reg_mic_gain     <= 16'd256;   // Default 1.0x (0 dB)
         end else begin
             // --- AXI Write ---
             if (~s_axi_awready && s_axi_awvalid && s_axi_wvalid) begin
@@ -148,6 +177,7 @@ module axis_noise_gate #(
                     4'd3: reg_hold_samples <= s_axi_wdata[15:0];
                     4'd4: reg_attack_step  <= s_axi_wdata[8:0];
                     4'd5: reg_release_step <= s_axi_wdata[8:0];
+                    4'd7: reg_mic_gain     <= s_axi_wdata[15:0];
                     default: ;
                 endcase
             end else begin
@@ -174,6 +204,8 @@ module axis_noise_gate #(
                     4'd5: s_axi_rdata <= {23'd0, reg_release_step};
                     // Reg 6: Telemetry Status (Live envelope & gate state)
                     4'd6: s_axi_rdata <= {7'd0, gate_state, envelope};
+                    // Reg 7: Mic Gain
+                    4'd7: s_axi_rdata <= {16'd0, reg_mic_gain};
                     default: s_axi_rdata <= 32'd0;
                 endcase
             end else begin
@@ -209,9 +241,15 @@ module axis_noise_gate #(
             m_axis_tvalid   <= 1'b0;
             fsm_state       <= ST_IDLE;
         end else begin
-            // 1. Tangkap sampel Channel 0 (Left) dari Beamformer
+            // 1. Tangkap sampel Channel 0 (Left) dari Beamformer dengan Mic Gain Scaler & Anti-Overflow Clamping
             if (s_axis_tvalid && s_axis_tready && (s_axis_tid == 3'd0)) begin
-                audio_in        <= s_axis_tdata[27:4];
+                if (mic_boost_scaled > 32'sd8388607)
+                    audio_in <= 24'sd8388607;
+                else if (mic_boost_scaled < -32'sd8388608)
+                    audio_in <= -24'sd8388608;
+                else
+                    audio_in <= mic_boost_scaled[23:0];
+
                 preamble_reg    <= s_axis_tdata[3:0];
                 vuc_reg         <= s_axis_tdata[30:28];
                 sample_received <= 1'b1;

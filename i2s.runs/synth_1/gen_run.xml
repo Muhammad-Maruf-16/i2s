@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1793600332">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1793612886">
   <File Type="VDS-TIMING-PB" Name="design_1_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="design_1_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="design_1_wrapper.dcp"/>
@@ -26,6 +26,20 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/axis_noise_gate.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/axis_peq_7band.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/axis_dynamic_notch.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -91,7 +105,10 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_axis_noise_gate_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axis_peq_7band_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axis_tlast_gen_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axis_noise_gate_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axis_dynamic_notch_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axis_dlms_beamformer_0_0"/>
 </GenRun>

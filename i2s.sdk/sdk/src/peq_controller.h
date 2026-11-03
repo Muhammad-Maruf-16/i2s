@@ -26,4 +26,8 @@ void PEQ_SetLPF(uint32_t base_addr, float freq_hz, float q);
 void PEQ_SetPeak(uint32_t base_addr, uint8_t stage_idx, float freq_hz, float q, float gain_db);
 void PEQ_SetBypassStage(uint32_t base_addr, uint8_t stage_idx);
 
+// Pengatur Master Volume & Output Gain
+void PEQ_SetMasterVolume(uint32_t base_addr, float volume_percent);
+void PEQ_SetMasterGainDb(uint32_t base_addr, float gain_db);
+
 #endif /* PEQ_CONTROLLER_H_ */

@@ -1,0 +1,502 @@
+
+*** Running vivado
+    with args -log design_1_axis_dynamic_notch_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axis_dynamic_notch_0_0.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source design_1_axis_dynamic_notch_0_0.tcl -notrace
+Command: synth_design -top design_1_axis_dynamic_notch_0_0 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+WARNING: [IP_Flow 19-3571] IP 'design_1_axis_dynamic_notch_0_0' is restricted:
+* Module reference is stale and needs refreshing.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 752595 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1645.512 ; gain = 154.719 ; free physical = 265 ; free virtual = 13973
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_axis_dynamic_notch_0_0' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_axis_dynamic_notch_0_0/synth/design_1_axis_dynamic_notch_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'axis_dynamic_notch' [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:18]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DEF_BP_B0 bound to: 418750 - type: integer 
+	Parameter DEF_BP_B1 bound to: 0 - type: integer 
+	Parameter DEF_BP_B2 bound to: 32'sb11111111111110011001110001000010 
+	Parameter DEF_BP_A1 bound to: 32'sb11111000000100001100110100111000 
+	Parameter DEF_BP_A2 bound to: 66271364 - type: integer 
+	Parameter S_IDLE bound to: 3'b000 
+	Parameter S_BP0 bound to: 3'b001 
+	Parameter S_BP1 bound to: 3'b010 
+	Parameter S_DIFF bound to: 3'b011 
+	Parameter S_PREP0 bound to: 3'b100 
+	Parameter S_SEND0 bound to: 3'b101 
+	Parameter S_SEND1 bound to: 3'b110 
+INFO: [Synth 8-6155] done synthesizing module 'axis_dynamic_notch' (1#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_dynamic_notch_0_0' (2#1) [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/bd/design_1/ip/design_1_axis_dynamic_notch_0_0/synth/design_1_axis_dynamic_notch_0_0.v:58]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_awaddr[1]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_awaddr[0]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_awprot[2]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_awprot[1]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_awprot[0]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_wstrb[3]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_wstrb[2]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_wstrb[1]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_wstrb[0]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_araddr[1]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_araddr[0]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_arprot[2]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_arprot[1]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_arprot[0]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axis_tdata[31]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1703.230 ; gain = 212.438 ; free physical = 358 ; free virtual = 14015
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1706.199 ; gain = 215.406 ; free physical = 366 ; free virtual = 14031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1706.199 ; gain = 215.406 ; free physical = 366 ; free virtual = 14031
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1877.918 ; gain = 0.000 ; free physical = 240 ; free virtual = 13884
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1877.918 ; gain = 0.000 ; free physical = 230 ; free virtual = 13874
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 305 ; free virtual = 13943
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 305 ; free virtual = 13943
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 305 ; free virtual = 13943
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 287 ; free virtual = 13932
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     58 Bit       Adders := 2     
+	   3 Input     56 Bit       Adders := 2     
+	   3 Input     25 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 2     
+	   3 Input     24 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
++---XORs : 
+	               27 Bit    Wide XORs := 1     
++---Registers : 
+	               58 Bit    Registers := 2     
+	               34 Bit    Registers := 1     
+	               32 Bit    Registers := 7     
+	               24 Bit    Registers := 5     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 8     
++---Multipliers : 
+	                24x32  Multipliers := 5     
++---Muxes : 
+	   8 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 7     
+	   8 Input     24 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 3     
+	   9 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	  10 Input      1 Bit        Muxes := 9     
+	   8 Input      1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module axis_dynamic_notch 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     58 Bit       Adders := 2     
+	   3 Input     56 Bit       Adders := 2     
+	   3 Input     25 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 2     
+	   3 Input     24 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
++---XORs : 
+	               27 Bit    Wide XORs := 1     
++---Registers : 
+	               58 Bit    Registers := 2     
+	               34 Bit    Registers := 1     
+	               32 Bit    Registers := 7     
+	               24 Bit    Registers := 5     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 8     
++---Multipliers : 
+	                24x32  Multipliers := 5     
++---Muxes : 
+	   8 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 7     
+	   8 Input     24 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 3     
+	   9 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	  10 Input      1 Bit        Muxes := 9     
+	   8 Input      1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:303]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:303]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:302]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:302]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+DSP Report: Generating DSP bp_d21, operation Mode is: A*B.
+DSP Report: operator bp_d21 is absorbed into DSP bp_d21.
+DSP Report: operator bp_d21 is absorbed into DSP bp_d21.
+DSP Report: Generating DSP bp_d21, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator bp_d21 is absorbed into DSP bp_d21.
+DSP Report: operator bp_d21 is absorbed into DSP bp_d21.
+DSP Report: Generating DSP bp_d21, operation Mode is: A*B.
+DSP Report: operator bp_d21 is absorbed into DSP bp_d21.
+DSP Report: operator bp_d21 is absorbed into DSP bp_d21.
+DSP Report: Generating DSP bp_d21, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator bp_d21 is absorbed into DSP bp_d21.
+DSP Report: operator bp_d21 is absorbed into DSP bp_d21.
+DSP Report: Generating DSP bp_d12, operation Mode is: A*B.
+DSP Report: operator bp_d12 is absorbed into DSP bp_d12.
+DSP Report: operator bp_d12 is absorbed into DSP bp_d12.
+DSP Report: Generating DSP bp_d12, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator bp_d12 is absorbed into DSP bp_d12.
+DSP Report: operator bp_d12 is absorbed into DSP bp_d12.
+DSP Report: Generating DSP bp_d12, operation Mode is: A*B.
+DSP Report: operator bp_d12 is absorbed into DSP bp_d12.
+DSP Report: operator bp_d12 is absorbed into DSP bp_d12.
+DSP Report: Generating DSP bp_d12, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator bp_d12 is absorbed into DSP bp_d12.
+DSP Report: operator bp_d12 is absorbed into DSP bp_d12.
+DSP Report: Generating DSP bp_acc_wire0, operation Mode is: A*B.
+DSP Report: operator bp_acc_wire0 is absorbed into DSP bp_acc_wire0.
+DSP Report: operator bp_acc_wire0 is absorbed into DSP bp_acc_wire0.
+DSP Report: Generating DSP bp_acc_wire0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator bp_acc_wire0 is absorbed into DSP bp_acc_wire0.
+DSP Report: operator bp_acc_wire0 is absorbed into DSP bp_acc_wire0.
+DSP Report: Generating DSP depth_calc, operation Mode is: A*B.
+DSP Report: operator depth_calc is absorbed into DSP depth_calc.
+DSP Report: Generating DSP sub_mult0, operation Mode is: A*B.
+DSP Report: operator sub_mult0 is absorbed into DSP sub_mult0.
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_awaddr[1]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_awaddr[0]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_awprot[2]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_awprot[1]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_awprot[0]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_wstrb[3]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_wstrb[2]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_wstrb[1]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_wstrb[0]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_araddr[1]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_araddr[0]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_arprot[2]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_arprot[1]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axi_arprot[0]
+WARNING: [Synth 8-3331] design axis_dynamic_notch has unconnected port s_axis_tdata[31]
+INFO: [Synth 8-3886] merging instance 'inst/bp_d2_reg[55]' (FDCE) to 'inst/bp_d2_reg[56]'
+INFO: [Synth 8-3886] merging instance 'inst/bp_d2_reg[56]' (FDCE) to 'inst/bp_d2_reg[57]'
+INFO: [Synth 8-3886] merging instance 'inst/m_axis_tid_reg[1]' (FDCE) to 'inst/m_axis_tid_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/m_axis_tid_reg[2] )
+INFO: [Synth 8-3886] merging instance 'inst/s_axi_rresp_reg[0]' (FDCE) to 'inst/s_axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/s_axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/s_axi_bresp_reg[0]' (FDCE) to 'inst/s_axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/s_axi_bresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/bp_d1_reg[56]' (FDCE) to 'inst/bp_d1_reg[57]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 283 ; free virtual = 13933
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++-------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name        | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|axis_dynamic_notch | A*B            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_dynamic_notch | (PCIN>>17)+A*B | 24     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_dynamic_notch | A*B            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_dynamic_notch | (PCIN>>17)+A*B | 24     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_dynamic_notch | A*B            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_dynamic_notch | (PCIN>>17)+A*B | 24     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_dynamic_notch | A*B            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_dynamic_notch | (PCIN>>17)+A*B | 24     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_dynamic_notch | A*B            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_dynamic_notch | (PCIN>>17)+A*B | 24     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_dynamic_notch | A*B            | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_dynamic_notch | A*B            | 24     | 10     | -      | -      | 34     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:135]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:189]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:135]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:187]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:187]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:135]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:188]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:135]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:188]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:186]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:186]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:147]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:135]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:258]
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 207 ; free virtual = 13826
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 206 ; free virtual = 13824
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:140]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:135]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:189]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:135]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:187]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:187]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:135]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:188]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:135]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:188]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:186]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:186]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:144]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:147]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:135]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/maruf/fpga_ebaz4205/i2s/i2s.srcs/sources_1/new/axis_dynamic_notch.v:258]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 220 ; free virtual = 13822
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6064] Net \inst/audio_in [23] is driving 42 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 299 ; free virtual = 13804
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 299 ; free virtual = 13804
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 299 ; free virtual = 13804
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 299 ; free virtual = 13804
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 299 ; free virtual = 13804
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 292 ; free virtual = 13796
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |   108|
+|2     |DSP48E1 |    12|
+|3     |LUT1    |    47|
+|4     |LUT2    |   317|
+|5     |LUT3    |    76|
+|6     |LUT4    |    51|
+|7     |LUT5    |    97|
+|8     |LUT6    |   122|
+|9     |MUXF7   |    24|
+|10    |FDCE    |   435|
+|11    |FDPE    |    73|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------+-------------------+------+
+|      |Instance |Module             |Cells |
++------+---------+-------------------+------+
+|1     |top      |                   |  1362|
+|2     |  inst   |axis_dynamic_notch |  1361|
++------+---------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 284 ; free virtual = 13789
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1877.918 ; gain = 215.406 ; free physical = 345 ; free virtual = 13850
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1877.918 ; gain = 387.125 ; free physical = 345 ; free virtual = 13850
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 144 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'design_1_axis_dynamic_notch_0_0' is not ideal for floorplanning, since the cellview 'axis_dynamic_notch' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1896.879 ; gain = 0.000 ; free physical = 273 ; free virtual = 13778
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+73 Infos, 33 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 1896.879 ; gain = 535.426 ; free physical = 372 ; free virtual = 13877
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1896.879 ; gain = 0.000 ; free physical = 372 ; free virtual = 13877
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/maruf/fpga_ebaz4205/i2s/i2s.runs/design_1_axis_dynamic_notch_0_0_synth_1/design_1_axis_dynamic_notch_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1920.891 ; gain = 0.000 ; free physical = 363 ; free virtual = 13869
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/maruf/fpga_ebaz4205/i2s/i2s.runs/design_1_axis_dynamic_notch_0_0_synth_1/design_1_axis_dynamic_notch_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_axis_dynamic_notch_0_0_utilization_synth.rpt -pb design_1_axis_dynamic_notch_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  2 16:13:16 2026...

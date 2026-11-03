@@ -8,13 +8,22 @@ LD_SRCS += \
 ../src/lscript_ddr.ld 
 
 C_SRCS += \
-../src/main.c 
+../src/dynamic_notch_controller.c \
+../src/main.c \
+../src/noise_gate_controller.c \
+../src/peq_controller.c 
 
 OBJS += \
-./src/main.o 
+./src/dynamic_notch_controller.o \
+./src/main.o \
+./src/noise_gate_controller.o \
+./src/peq_controller.o 
 
 C_DEPS += \
-./src/main.d 
+./src/dynamic_notch_controller.d \
+./src/main.d \
+./src/noise_gate_controller.d \
+./src/peq_controller.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

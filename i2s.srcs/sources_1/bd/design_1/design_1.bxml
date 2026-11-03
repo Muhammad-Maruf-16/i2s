@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="design_1" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1793601288"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1793601288"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1793601288"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1793601288"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1793612879"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1793612879"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1793612879"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1793612879"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -97,6 +97,30 @@
       </File>
       <File Name="ip/design_1_axis_dlms_beamformer_0_0/design_1_axis_dlms_beamformer_0_0.xci" Type="IP">
         <Instance HierarchyPath="axis_dlms_beamformer_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/design_1_axis_noise_gate_0_1/design_1_axis_noise_gate_0_1.xci" Type="IP">
+        <Instance HierarchyPath="axis_noise_gate_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/design_1_axis_peq_7band_0_0/design_1_axis_peq_7band_0_0.xci" Type="IP">
+        <Instance HierarchyPath="axis_peq_7band_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/design_1_axis_dynamic_notch_0_0/design_1_axis_dynamic_notch_0_0.xci" Type="IP">
+        <Instance HierarchyPath="axis_dynamic_notch_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

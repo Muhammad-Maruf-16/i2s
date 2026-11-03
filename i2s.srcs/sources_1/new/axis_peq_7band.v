@@ -109,7 +109,13 @@ module axis_peq_7band #(
     reg signed [23:0] stage_x;
     reg signed [23:0] stage_y;
     reg signed [57:0] y_acc;
+    reg [15:0]        reg_master_vol; // Q8: 256 = 1.0x (100% / 0 dB), 512 = 2.0x (+6 dB), 0 = Mute
+    reg signed [23:0] audio_peq;
     reg signed [23:0] audio_final;
+
+    // Master Volume Multiplier & Saturation Limiter
+    wire signed [39:0] master_mult   = audio_peq * $signed({1'b0, reg_master_vol});
+    wire signed [31:0] master_scaled = master_mult[31:8];
 
     // Parity Genap AES3 atas bit [30:4]
     wire [26:0] payload = {vuc_reg, audio_final};
@@ -119,9 +125,10 @@ module axis_peq_7band #(
     reg [2:0] fsm_state;
     localparam S_IDLE  = 3'd0;
     localparam S_CALC  = 3'd1;
-    localparam S_PREP0 = 3'd2;
-    localparam S_SEND0 = 3'd3;
-    localparam S_SEND1 = 3'd4;
+    localparam S_VOL   = 3'd2;
+    localparam S_PREP0 = 3'd3;
+    localparam S_SEND0 = 3'd4;
+    localparam S_SEND1 = 3'd5;
 
     integer i;
 
@@ -142,8 +149,9 @@ module axis_peq_7band #(
             s_axi_rresp   <= 2'b00;
             s_axi_rdata   <= 32'd0;
 
-            global_bypass <= 1'b0;
-            stage_enable  <= 7'b1111111;
+            global_bypass  <= 1'b0;
+            stage_enable   <= 7'b1111111;
+            reg_master_vol <= 16'd256; // Default 1.0x (100% / 0 dB)
 
             // Inisialisasi awal ke mode FLAT / BYPASS (b0 = 1.0, lainnya = 0)
             for (i = 0; i < 7; i = i + 1) begin
@@ -168,6 +176,7 @@ module axis_peq_7band #(
                 // Reg 21..25 : Stage 4 (PEQ4) -> b0, b1, b2, a1, a2
                 // Reg 26..30 : Stage 5 (PEQ5) -> b0, b1, b2, a1, a2
                 // Reg 31..35 : Stage 6 (LPF)  -> b0, b1, b2, a1, a2
+                // Reg 36     : Master Volume  -> Q8 (256 = 100%)
                 if (reg_addr == 6'd0) begin
                     global_bypass <= s_axi_wdata[0];
                     stage_enable  <= s_axi_wdata[7:1];
@@ -179,6 +188,8 @@ module axis_peq_7band #(
                         3: coeff_a1[(reg_addr - 6'd1) / 5] <= s_axi_wdata;
                         4: coeff_a2[(reg_addr - 6'd1) / 5] <= s_axi_wdata;
                     endcase
+                end else if (reg_addr == 6'd36) begin
+                    reg_master_vol <= s_axi_wdata[15:0];
                 end
             end else begin
                 s_axi_awready <= 1'b0;
@@ -205,6 +216,8 @@ module axis_peq_7band #(
                         3: s_axi_rdata <= coeff_a1[(rreg_addr - 6'd1) / 5];
                         4: s_axi_rdata <= coeff_a2[(rreg_addr - 6'd1) / 5];
                     endcase
+                end else if (rreg_addr == 6'd36) begin
+                    s_axi_rdata <= {16'd0, reg_master_vol};
                 end else begin
                     s_axi_rdata <= 32'd0;
                 end
@@ -234,6 +247,7 @@ module axis_peq_7band #(
             stage_x         <= 24'sd0;
             stage_y         <= 24'sd0;
             y_acc           <= 58'sd0;
+            audio_peq       <= 24'sd0;
             audio_final     <= 24'sd0;
             m_axis_tdata    <= 32'd0;
             m_axis_tid      <= 3'd0;
@@ -260,8 +274,8 @@ module axis_peq_7band #(
                     if (sample_received) begin
                         sample_received <= 1'b0;
                         if (global_bypass) begin
-                            audio_final <= audio_in;
-                            fsm_state   <= S_PREP0;
+                            audio_peq <= audio_in;
+                            fsm_state <= S_VOL;
                         end else begin
                             stage_x    <= audio_in;
                             calc_stage <= 4'd0;
@@ -290,12 +304,23 @@ module axis_peq_7band #(
                     end
 
                     if (calc_stage == 4'd6) begin
-                        // Selesai stage 6 -> simpan hasil akhir
-                        audio_final <= (stage_enable[6]) ? stage_y : stage_x;
-                        fsm_state   <= S_PREP0;
+                        // Selesai stage 6 -> simpan hasil ke audio_peq lalu terapkan Master Volume
+                        audio_peq <= (stage_enable[6]) ? stage_y : stage_x;
+                        fsm_state <= S_VOL;
                     end else begin
                         calc_stage <= calc_stage + 4'd1;
                     end
+                end
+
+                // Step Pengaturan Master Volume & Saturation Limiter
+                S_VOL: begin
+                    if (master_scaled > 32'sd8388607)
+                        audio_final <= 24'sd8388607;
+                    else if (master_scaled < -32'sd8388608)
+                        audio_final <= -24'sd8388608;
+                    else
+                        audio_final <= master_scaled[23:0];
+                    fsm_state <= S_PREP0;
                 end
 
                 // Siapkan Channel 0 (Left)

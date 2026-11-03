@@ -226,6 +226,21 @@
 #define XPAR_PS7_SLCR_0_S_AXI_HIGHADDR 0xF8000FFF
 
 
+/* Definitions for peripheral AXIS_NOISE_GATE_0 */
+#define XPAR_AXIS_NOISE_GATE_0_BASEADDR 0x43C20000
+#define XPAR_AXIS_NOISE_GATE_0_HIGHADDR 0x43C2FFFF
+
+
+/* Definitions for peripheral AXIS_PEQ_7BAND_0 */
+#define XPAR_AXIS_PEQ_7BAND_0_BASEADDR 0x43C30000
+#define XPAR_AXIS_PEQ_7BAND_0_HIGHADDR 0x43C3FFFF
+
+
+/* Definitions for peripheral AXIS_DYNAMIC_NOTCH_0 */
+#define XPAR_AXIS_DYNAMIC_NOTCH_0_BASEADDR 0x43C40000
+#define XPAR_AXIS_DYNAMIC_NOTCH_0_HIGHADDR 0x43C4FFFF
+
+
 /******************************************************************/
 
 /* Definitions for driver I2SRX */

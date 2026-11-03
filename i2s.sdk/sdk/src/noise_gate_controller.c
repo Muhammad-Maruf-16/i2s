@@ -12,6 +12,7 @@ void NoiseGate_Init(uint32_t base_addr)
     Xil_Out32(base_addr + GATE_REG_HOLD_SAMPLES, 2400);       // 50 ms hold
     Xil_Out32(base_addr + GATE_REG_ATTACK_STEP,  32);         // Fast attack
     Xil_Out32(base_addr + GATE_REG_RELEASE_STEP, 2);          // Smooth release
+    Xil_Out32(base_addr + GATE_REG_MIC_GAIN,     256);        // Default 1.0x (0 dB)
 }
 
 void NoiseGate_SetEnable(uint32_t base_addr, uint8_t enable)
@@ -44,6 +45,24 @@ void NoiseGate_SetReleaseStep(uint32_t base_addr, uint16_t step)
     if (step > 256) step = 256;
     if (step == 0) step = 1;
     Xil_Out32(base_addr + GATE_REG_RELEASE_STEP, step);
+}
+
+void NoiseGate_SetMicGain(uint32_t base_addr, float gain_mult)
+{
+    if (gain_mult < 0.0f) gain_mult = 0.0f;
+    if (gain_mult > 32.0f) gain_mult = 32.0f; // Max +30 dB boost
+    uint32_t val_q8 = (uint32_t)(gain_mult * 256.0f + 0.5f);
+    Xil_Out32(base_addr + GATE_REG_MIC_GAIN, val_q8);
+}
+
+void NoiseGate_SetMicGainDb(uint32_t base_addr, float gain_db)
+{
+    if (gain_db < -40.0f) gain_db = -40.0f;
+    if (gain_db > +30.0f) gain_db = +30.0f;
+    // 10^(gain_db / 20) via Taylor series
+    float y = gain_db * 0.11512925f;
+    float gain_mult = 1.0f + y * (1.0f + y * (0.5f + y * (0.16666667f + y * (0.04166667f + y * 0.00833333f))));
+    NoiseGate_SetMicGain(base_addr, gain_mult);
 }
 
 void NoiseGate_GetTelemetry(uint32_t base_addr, uint8_t *gate_open, uint32_t *envelope)

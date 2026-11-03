@@ -29,7 +29,9 @@ src/main.o src/main.o: ../src/main.c \
  ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx_hw.h \
  ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx_debug.h \
  ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx_chsts.h \
- ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx.h
+ ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx.h \
+ ../src/noise_gate_controller.h ../src/peq_controller.h \
+ ../src/dynamic_notch_controller.h
 
 ../../sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:
 
@@ -92,3 +94,9 @@ src/main.o src/main.o: ../src/main.c \
 ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx_chsts.h:
 
 ../../sdk_bsp/ps7_cortexa9_0/include/xi2stx.h:
+
+../src/noise_gate_controller.h:
+
+../src/peq_controller.h:
+
+../src/dynamic_notch_controller.h:

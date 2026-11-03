@@ -6,6 +6,9 @@
 #include "xparameters.h"
 #include "xil_cache.h"
 #include "xi2stx.h"
+#include "noise_gate_controller.h"
+#include "peq_controller.h"
+#include "dynamic_notch_controller.h"
 
 
 #define DMA_DEV_ID          XPAR_AXIDMA_0_DEVICE_ID
@@ -96,6 +99,27 @@ int main()
     XI2s_Tx_Enable(&I2sTx, TRUE);
     xil_printf("SUCCESS: I2S Transmitter active (M17 is live)!\r\n");
 
+    DynamicNotch_Init(XPAR_AXIS_DYNAMIC_NOTCH_0_BASEADDR);
+    // 1. Noise Gate (Diam = Mute, Bicara = Buka)
+    NoiseGate_Init(XPAR_AXIS_NOISE_GATE_0_BASEADDR);
+    NoiseGate_SetThresholds(XPAR_AXIS_NOISE_GATE_0_BASEADDR, 40000, 40000);
+    NoiseGate_SetHoldTimeMs(XPAR_AXIS_NOISE_GATE_0_BASEADDR, 60.0f);
+    // 2. Equalizer 7-Stage
+    PEQ_Init(XPAR_AXIS_PEQ_7BAND_0_BASEADDR);
+    // HPF: Buang dengung listrik 50Hz & hembusan angin
+    PEQ_SetHPF(XPAR_AXIS_PEQ_7BAND_0_BASEADDR, 180.0f, 0.707f);
+    // Band 1: Kehangatan body vokal di 200 Hz (+2 dB)
+    PEQ_SetPeak(XPAR_AXIS_PEQ_7BAND_0_BASEADDR, PEQ_STAGE_BAND1, 200.0f, 1.4f, 0.0f);
+    // Band 2: Buang suara "mendem/kardus" di 500 Hz (-3.5 dB)
+    PEQ_SetPeak(XPAR_AXIS_PEQ_7BAND_0_BASEADDR, PEQ_STAGE_BAND2, 500.0f, 0.8f, -12.0f);
+    // Band 3: Clarity / artikulasi vokal di 2.8 kHz (+2.5 dB)
+    PEQ_SetPeak(XPAR_AXIS_PEQ_7BAND_0_BASEADDR, PEQ_STAGE_BAND3, 2000.0f, 1.5f, +3.0f);
+    // Band 4: NOTCH FILTER tajam pemotong feedback melengking di 4.0 kHz (-12 dB, Q=8 tajam)
+    PEQ_SetPeak(XPAR_AXIS_PEQ_7BAND_0_BASEADDR, PEQ_STAGE_BAND4, 4000.0f, 8.0f, 0.0f);
+    // Band 5: Air / kemilau renyah vokal di 10 kHz (+2 dB)
+    PEQ_SetPeak(XPAR_AXIS_PEQ_7BAND_0_BASEADDR, PEQ_STAGE_BAND5, 10000.0f, 1.2f, 0.0f);
+    // LPF: Buang desis ultra-tinggi di 16 kHz
+    PEQ_SetLPF(XPAR_AXIS_PEQ_7BAND_0_BASEADDR, 16000.0f, 0.707f);
 
     // 2. Inisialisasi AXI DMA
     xil_printf("[2/3] Initializing AXI DMA...\r\n");
